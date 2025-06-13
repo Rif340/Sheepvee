@@ -45,13 +45,10 @@ Daftar fitur-fitur keren yang dimiliki proyek Anda. Gunakan bullet points agar m
 
 ## 📸 Tampilan
 
-Sertakan beberapa screenshot atau GIF demo dari proyek Anda. Visual sangat membantu!
+Tampilan Singkat Project!
 
 ![Halaman Beranda](https://github.com/Rif340/Gambar-Gambar/blob/main/Screenshot%202025-06-13%20205147.png)
 *Berikut Ini adalah Tampilan Beranda Company Profile Sheepvee*
-
-![Demo Proyek](https://rif340.github.io/Sheepvee/)
-*Berikut ini adalah tampilan nya*
 
 ---
 
