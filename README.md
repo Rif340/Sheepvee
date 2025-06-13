@@ -50,6 +50,9 @@ Tampilan Singkat Project!
 ![Halaman Beranda](https://github.com/Rif340/Gambar-Gambar/blob/main/Screenshot%202025-06-13%20205147.png)
 *Berikut Ini adalah Tampilan Beranda Company Profile Sheepvee*
 
+![Halaman About Sheepvee]([https://github.com/Rif340/Gambar-Gambar/blob/main/Screenshot%202025-06-13%20205147.png](https://github.com/Rif340/Gambar-Gambar/blob/main/Screenshot%202025-06-13%20205651.png))
+*Berikut Ini adalah Tampilan About*
+
 ---
 
 ## 🛠️ Teknologi yang Digunakan
