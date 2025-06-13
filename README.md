@@ -39,6 +39,7 @@ Daftar fitur-fitur keren yang dimiliki proyek Anda. Gunakan bullet points agar m
 * **Fitur Validasi:** Menampilkan Validitas Apakah User Akan Melanjutkan Pembelian Atau Tidak.
 * **Fitur Keranjang:** Menampilkan Barang Barang Yang Akan Di Beli Nanti Oleh Kostomer.
 * **Fitur User:** Menampilkan Hasil Dari Checkout Kostumer.
+* **Fitur Kontak Sheepvee:** Menampilkan Form Kerjasama.
 * **Fitur Kelola Admin:** Ongoing (Proses).
 
 ---
