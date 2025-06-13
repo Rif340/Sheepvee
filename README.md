@@ -29,7 +29,7 @@ SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digita
 
 ## ✨ Fitur Utama
 
-Daftar fitur-fitur keren yang dimiliki proyek Anda. Gunakan bullet points agar mudah dibaca.
+Daftar fitur-fitur keren yang dimiliki 
 * **Fitur Beranda Sheepvee:** Menampilkan Deskripsi Singkat Dari Company Proflie Sheepvee.
 * **Fitur Tentang Sheepvee:** Menampilkan Detail Sejarah Sheepve.
 * **Fitur Pusat Edukasi Sheepvee:** Menampilkan Pusat Pembelajaran Bagi Seller Maupun Kostomer.
