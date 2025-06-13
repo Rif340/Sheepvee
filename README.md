@@ -4,7 +4,7 @@
   # Sheepvee
   
   <p>
-  Kami menyediakan domba pilihan dengan kualitas terbaik, sehat, dan siap memenuhi kebutuhan Anda.
+Dibuat Sebagai Memenuhi Tugas Mata Kuliah Interaksi Manusia Dan Komputer 2025
   </p>
 
   <a href="[URL_LISENSI]">
