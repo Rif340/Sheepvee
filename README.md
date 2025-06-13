@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="[URL_LOGO_PROYEK_ANDA]" alt="Logo Proyek" width="100"/>
+  <img src="[https://raw.githubusercontent.com/Rif340/Gambar-Gambar/refs/heads/main/logo_sheepvee.png]" alt="Logo Proyek" width="100"/>
   
   # Sheepvee
   
@@ -77,7 +77,7 @@ Tidak Ada
 
 1.  **Clone repository**
     ```sh
-    git clone [https://github.com/](https://github.com/)[USERNAME_ANDA]/[NAMA_REPO_ANDA].git
+    git clone [https://github.com/Rif340/Sheepvee].git
     ```
 
 2.  **Masuk ke direktori proyek**
