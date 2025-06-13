@@ -1,10 +1,10 @@
 <div align="center">
   <img src="[URL_LOGO_PROYEK_ANDA]" alt="Logo Proyek" width="100"/>
   
-  # Nama Proyek Anda
+  # Sheepvee
   
   <p>
-    Deskripsi singkat satu kalimat tentang proyek Anda.
+  Kami menyediakan domba pilihan dengan kualitas terbaik, sehat, dan siap memenuhi kebutuhan Anda.
   </p>
 
   <a href="[URL_LISENSI]">
@@ -21,32 +21,25 @@
 
 ---
 
-##  Daftar Isi
-- [Tentang Proyek](#tentang-proyek)
-- [Fitur Utama](#fitur-utama)
-- [Tampilan](#tampilan)
-- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
-- [Instalasi](#instalasi)
-- [Penggunaan](#penggunaan)
-- [Berkontribusi](#berkontribusi)
-- [Lisensi](#lisensi)
-- [Kontak](#kontak)
-- [Ucapan Terima Kasih](#ucapan-terima-kasih)
-
----
-
 ##  Tentang Proyek
 
-Jelaskan proyek Anda secara lebih mendalam di sini. Apa tujuan dibuatnya proyek ini? Masalah apa yang dipecahkannya? Berikan konteks yang cukup agar orang lain mengerti motivasi dan kegunaan proyek Anda.
+SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah memberdayakan peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba super di Indonesia yang terintegrasi dan berkelanjutan.
 
 ---
 
 ## ✨ Fitur Utama
 
 Daftar fitur-fitur keren yang dimiliki proyek Anda. Gunakan bullet points agar mudah dibaca.
-* **Fitur A:** Penjelasan singkat tentang fitur A.
-* **Fitur B:** Penjelasan singkat tentang fitur B.
-* **Fitur C:** Penjelasan singkat tentang fitur C.
+* **Fitur Beranda Sheepvee:** Menampilkan Deskripsi Singkat Dari Company Proflie Sheepvee.
+* **Fitur Tentang Sheepvee:** Menampilkan Detail Sejarah Sheepve.
+* **Fitur Pusat Edukasi Sheepvee:** Menampilkan Pusat Pembelajaran Bagi Seller Maupun Kostomer.
+* **Fitur Sheepvee Care:** Menampilkan Pusat Bantuan Kendala Yang Diperoleh Kostumer Maupun Seller.
+* **Fitur Product:** Menampilkan Berbagai Product Yang Disediakan Oleh Sheepvee.
+* **Fitur Checkout:** Menampilkan Fitur Checkout Yang Akan Dilakukan Pembelian.
+* **Fitur Validasi:** Menampilkan Validitas Apakah User Akan Melanjutkan Pembelian Atau Tidak.
+* **Fitur Keranjang:** Menampilkan Barang Barang Yang Akan Di Beli Nanti Oleh Kostomer.
+* **Fitur User:** Menampilkan Hasil Dari Checkout Kostumer.
+* **Fitur Kelola Admin:** Ongoing (Proses).
 
 ---
 
@@ -57,30 +50,28 @@ Sertakan beberapa screenshot atau GIF demo dari proyek Anda. Visual sangat memba
 ![Nama Screenshot 1]([URL_SCREENSHOT_1])
 *Deskripsi singkat untuk screenshot 1.*
 
-![Demo Proyek]([URL_GIF_DEMO])
-*Demo singkat penggunaan proyek.*
+![Demo Proyek](https://rif340.github.io/Sheepvee/)
+*Berikut ini adalah tampilan nya*
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
 
-Sebutkan teknologi, framework, atau library utama yang Anda gunakan dalam proyek ini.
+Html, Css, Javascript.
 
-* **Frontend:** [Contoh: React, Vue.js, Svelte]
-* **Backend:** [Contoh: Node.js, Django, Golang]
-* **Database:** [Contoh: PostgreSQL, MongoDB, Firebase]
-* **Tools:** [Contoh: Vite, Docker, Webpack]
+* **Frontend:** [Html, Css, Javascript]
+* **Backend:** [PHP (Ongoing)]
+* **Database:** [MySQL (Ongoing)]
+* **Tools:** [Boostrap, Laravel (Ongoing)]
 
 ---
 
 ## 🚀 Instalasi
 
-Berikan panduan langkah demi langkah yang jelas tentang cara menginstal dan menjalankan proyek Anda secara lokal. Buat agar semudah mungkin untuk diikuti.
+Download Dan Langsung Jalankan😁.
 
 **Prasyarat:**
-Sebutkan software atau tools yang perlu diinstal terlebih dahulu.
-* [Node.js](https://nodejs.org/) (v18 atau lebih baru)
-* [Git](https://git-scm.com/)
+Tidak Ada
 
 **Langkah-langkah Instalasi:**
 
@@ -93,29 +84,3 @@ Sebutkan software atau tools yang perlu diinstal terlebih dahulu.
     ```sh
     cd [NAMA_REPO_ANDA]
     ```
-
-3.  **Install dependencies**
-    ```sh
-    npm install
-    ```
-    atau jika menggunakan yarn:
-    ```sh
-    yarn install
-    ```
-
-4.  **Konfigurasi Environment Variables**
-    Buat file `.env` dari contoh file `.env.example`.
-    ```sh
-    cp .env.example .env
-    ```
-    Kemudian isi variabel yang dibutuhkan di dalam file `.env`.
-    
----
-
-## 📖 Penggunaan
-
-Jelaskan cara menggunakan aplikasi setelah instalasi berhasil.
-
-**Menjalankan Aplikasi:**
-```sh
-npm run dev
