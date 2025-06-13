@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="[https://raw.githubusercontent.com/Rif340/Gambar-Gambar/refs/heads/main/logo_sheepvee.png]" alt="Logo Proyek" width="100"/>
+  <img src="https://raw.githubusercontent.com/Rif340/Gambar-Gambar/refs/heads/main/logo_sheepvee.png" alt="Logo Proyek" width="100"/>
   
   # Sheepvee
   
