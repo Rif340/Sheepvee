@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tentang Sheepvee</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+    <!-- boostrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- almalik font -->
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+    <!-- css -->
+    <link href="care.css" rel="stylesheet">
+
+    <style>
+        /* navbar */
+        .background_navbar2 {
+            box-shadow: 1px 1px 10px 7px rgba(0, 0, 0, 0.22);
+            -webkit-box-shadow: 1px 1px 10px 7px rgba(0, 0, 0, 0.22);
+            -moz-box-shadow: 1px 1px 10px 7px rgba(0, 0, 0, 0.22);
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            background-color: white;
+        }
+
+        /* Ubah ini */
+        .navbar2 {
+            z-index: 8;
+            position: sticky;
+            display: flex;
+            width: 100%;
+            height: 100px;
+            justify-content: space-evenly;
+            top: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Tambahkan ini: efek sticky saat scroll */
+        .navbar2.fixed {
+            position: fixed;
+        }
+
+        .nav-logo2 {
+            display: flex;
+            position: relative;
+            z-index: 6;
+        }
+
+        .nav-menu2 {
+            gap: 3rem;
+            display: flex;
+            position: relative;
+            z-index: 6;
+            align-items: center;
+        }
+
+        .nav-menu2>a,
+        .nav-menu2 .dropdown2>a {
+            text-decoration: none;
+            color: #1e3c49;
+            text-shadow: 1px 1px white;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .nav-menu2 .arrow {
+            text-decoration: none;
+            color: #1e3c49;
+            font-size: 10px;
+            display: inline-block;
+            text-shadow: none;
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+            transform: rotate(180deg);
+        }
+
+        /* --- Dropdown CSS --- */
+        .nav-menu2 .dropdown2 {
+            position: relative;
+        }
+
+        .hover-bridge2 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            z-index: 9;
+        }
+
+        .dropdown-content2 {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            background: linear-gradient(#6a994e, #386);
+            min-width: 180px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            border-radius: 8px;
+            margin-top: 10px;
+            padding: 6px 0;
+            opacity: 0;
+            padding: 7px;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(10px);
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0s linear 0.25s;
+            pointer-events: none;
+        }
+
+        .dropdown-content2::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #93d25e;
+        }
+
+        .dropdown-content2 a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            white-space: nowrap;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .dropdown-content2 a:hover {
+            background-color: #3b8a63;
+            border-radius: 7px;
+        }
+
+        .nav-menu2 .dropdown2:hover .dropdown-content2 {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            transition-delay: 0s;
+            pointer-events: auto;
+        }
+
+        .nav-menu2 .dropdown2:hover .arrow {
+            transform: rotate(0deg);
+        }
+
+        .nav-menu2 .arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            transform: rotate(180deg);
+            margin-left: 5px;
+        }
+
+        .nav-menu2 .dropdown2 {
+            position: relative;
+        }
+
+        .nav-menu2 .dropdown>a {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-us2 {
+            padding-top: 2rem;
+            position: relative;
+            z-index: 6;
+        }
+
+        .contact-us2 .input-wrapper {
+            position: relative;
+            width: 250px;
+        }
+
+        .contact-us2 .input-wrapper i {
+            position: absolute;
+            top: 35%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #5b5d6b;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-us2 input {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #5b5d6b;
+            padding: 10px 10px 10px 35px;
+            color: black;
+            opacity: 80%;
+            font-weight: 200;
+            height: 35px;
+        }
+
+        .contact-us2 input:focus {
+            border: 1px solid #09c819;
+            outline: none;
+            color: #09c819;
+        }
+
+        /* input */
+
+        /* dropdown input */
+        .dropdown-hasil {
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 250px;
+            margin-top: 5px;
+            list-style: none;
+            padding: 0;
+            display: none;
+            z-index: 1000;
+        }
+
+        .dropdown-hasil li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-hasil li:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* akhir dropdown input */
+
+        .cart {
+            font-size: 24px;
+            color: #3a6b35;
+            z-index: 6;
+            padding-top: 2rem;
+        }
+
+        .cart a {
+            text-decoration: none;
+            color: #3a6b35;
+        }
+
+        .user2 {
+            padding-top: 2rem;
+            position: relative;
+            z-index: 6;
+        }
+
+        .isi_user2 {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: #3a6b35;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #09c819;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 0 1px #09c819;
+            position: relative;
+            transition: transform 0.2s ease-in-out;
+            filter: drop-shadow(1px 1px 2px white);
+        }
+
+        .isi_user2 i {
+            color: white;
+        }
+
+        .nav-logo2 h1 {
+            padding-top: 2rem;
+            font-family: "Almalik", sans-serif;
+            font-size: 28px;
+            background: -webkit-linear-gradient(#4a90af, #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 50px;
+        }
+
+        /* akhi navbar */
+    </style>
+</head>
+</head>
+
+<body>
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="#">Domba-Domba</a>
+                    <a href="#">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="cart.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+
+    <div class="care">
+        <div class="landing-page-care">
+            
+            <div class="tekslandingpage">
+                <h1>Selamat Malam,<br><span>Pengguna</span><br>Ada yang bisa kami bantu?</h1>
+                <button>Cari Disini !</button>
+            </div>
+
+            <div class="gambarlandingpage">
+                <img src="asset/sheepvee_peduli2.png"></img>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="title">Yang sering ditanyakan</h2>
+    
+        <div class="accordion-container">
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-title">Pengembalian Dana (Refund) Belum Diterima</span>
+                    <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        Pengembalian dana biasanya memerlukan waktu 1-14 hari kerja tergantung metode pembayaran yang
+                        digunakan. Jika sudah melebihi batas waktu tersebut, silakan hubungi customer service kami untuk
+                        bantuan lebih lanjut.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-title">Cara Membatalkan Pesanan di Sheepvee</span>
+                    <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        Anda dapat membatalkan pesanan melalui halaman 'Pesanan Saya' dengan memilih pesanan yang ingin
+                        dibatalkan, kemudian klik 'Batalkan Pesanan'. Pastikan pesanan belum diproses oleh penjual.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-title">Saya Belum Terima Pesanan</span>
+                    <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        Silakan cek status pengiriman melalui nomor resi yang tersedia di halaman detail pesanan. Jika
+                        sudah melewati estimasi waktu pengiriman, Anda dapat menghubungi kurir atau mengajukan komplain
+                        melalui halaman bantuan.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-title">GoPay Later by PT Multifinance Anak Bangsa</span>
+                    <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        GoPay Later adalah layanan kredit digital yang memungkinkan Anda berbelanja sekarang dan
+                        membayar nanti. Layanan ini bermitra dengan PT Multifinance Anak Bangsa untuk memberikan
+                        kemudahan pembayaran.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-title">Informasi Penonaktifan Produk Sheepve</span>
+                    <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        Per tanggal tertentu, produk investasi sheepvee tidak lagi tersedia di
+                        platform. Pengguna yang masih memiliki investasi dapat melakukan pencairan sesuai dengan
+                        ketentuan yang berlaku.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="judul-sheepvee-care">
+        <h1>Dukungan & Informasi</h1>
+    </div>
+
+    <div class="container-sheepvee-care">
+        <!-- Card 2: SheepVee Security -->
+        <div class="card-sheepvee-care security-sheepvee-care">
+            <div class="icon-container-sheepvee-care">
+                <img src="https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/arael_v3/6787136d.png"
+                    alt="Ingin melaporkan HAKI (Hak Kekayaan Intelektual)?" class="css-xv8jg6">
+            </div>
+            <h3 class="card-title-sheepvee-care">Ingin melaporkan pelanggaran kebijakan?</h3>
+            <p class="card-description-sheepvee-care">
+                Upaya SheepVee dalam melindungi keamanan platform dan memastikan kenyamanan semua pengguna di dalam
+                ekosistem kami.
+            </p>
+            <button class="card-button-sheepvee-care">Baca Selengkapnya</button>
+        </div>
+    
+        <!-- Card 3: SheepVee Business -->
+        <div class="card-sheepvee-care business-sheepvee-care">
+            <div class="icon-container-sheepvee-care">
+                <div class="icon-sheepvee-care">
+                    <div
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 16px; font-weight: bold;">
+                        <img src="asset/logo_sheepvee.png">
+                    </div>
+                </div>
+            </div>
+            <h3 class="card-title-sheepvee-care">Tertarik bergabung dengan SheepVee?</h3>
+            <p class="card-description-sheepvee-care">
+                Bergabunglah dengan keluarga SheepVee dan wujudkan karir impian Anda. Dapatkan kesempatan berkembang di
+                lingkungan kerja yang inovatif.
+            </p>
+            <button class="card-button-sheepvee-care">Lihat Lowongan Kerja</button>
+        </div>
+    
+        <!-- Card 4: SheepVee Education -->
+        <div class="card-sheepvee-care education-sheepvee-care">
+            <div class="icon-container-sheepvee-care">
+                <img class="icon-buku" src="asset/open-book.png">
+            </div>
+            <h3 class="card-title-sheepvee-care">Pelajari pusat edukasi SheepVee</h3>
+            <p class="card-description-sheepvee-care">
+                Dapatkan panduan lengkap untuk memaksimalkan pengalaman Anda dalam mengelola peternakan dasar hingga tips
+                advanced.
+            </p>
+            <button <button onclick="window.location.href='beranda_artikel.html'" class="card-button-sheepvee-care">Mulai Belajar</button>
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <footer>
+        <!-- footer atas -->
+        <div class="footer-atas">
+            <div class="footer-logo">
+                <div class="pembungkus-footer-logo">
+                    <img src="asset/cursor_sheepvee.png">
+                    <h3>SheepVee</h3>
+                </div>
+                <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                    memberdayakan
+                    peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                    super di Indonesia
+                    yang terintegrasi dan berkelanjutan.</p>
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <a href="about.html">Kisah Kami</a>
+                <a href="about.html">Peternakan Kami</a>
+                <a href="about.html">Testimonial</a>
+            </div>
+            <div class="footer-service">
+                <h3>Service</h3>
+                <a href="product.html">Domba-Domba</a>
+                <a href="care.html">Sheepvee Care</a>
+                <a href="product.html">Product</a>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Contact US</h3>
+                <a href="contact.html">Contact US</a>
+                <a href="contact.html">Location</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+        <!-- akhir footer atas -->
+    
+        <hr>
+    
+        <!-- footer bawah -->
+        <div class="footer-bawah">
+            <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                    href="https://github.com/Rif340">Rif340.</a></p>
+            <div class="icon">
+                <a href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-envelope-at"></i></a>
+            </div>
+    
+        </div>
+    
+    </footer>
+    <!-- akhir footer -->
+
+    <script>
+        // Add click handlers
+        document.querySelectorAll('.card-button-sheepvee-care').forEach(button => {
+            button.addEventListener('click', function () {
+                const cardTitle = this.closest('.card').querySelector('.card-title-sheepvee-care').textContent;
+                alert(`Anda mengklik SheepVee Care: ${cardTitle}`);
+            });
+        });
+
+        // Add hover effects
+        document.querySelectorAll('.card-sheepvee-care').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-4px)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+
+        <script>
+            // JavaScript untuk functionality accordion
+            document.addEventListener('DOMContentLoaded', function () {
+                const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+                accordionHeaders.forEach(header => {
+                    header.addEventListener('click', function () {
+                        const accordion = this.parentElement;
+                        const isActive = accordion.classList.contains('active');
+
+                        // Tutup semua accordion lainnya
+                        document.querySelectorAll('.accordion').forEach(acc => {
+                            acc.classList.remove('active');
+                        });
+
+                        // Toggle accordion yang diklik
+                        if (!isActive) {
+                            accordion.classList.add('active');
+                        }
+                    });
+                });
+            });
+        </script>
+
+</body>
+
+</html>

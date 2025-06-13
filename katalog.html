@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sheepvee Katalog</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+    <!-- boostrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- almalik font -->
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+    <!-- css -->
+    <link href="katalog.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="product.html">Domba-Domba</a>
+                    <a href="care.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="cart.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+    <div class="pembungkus_utama">
+
+        <div class="gambar_katalog">
+            <img class="gambar_utama" src="asset/bikang.png">
+
+            <div class="subimage">
+                <img src="asset/bikang.png">
+                <img src="asset/bikang.png">
+                <img src="asset/bikang.png">
+                <img src="asset/bikang.png">
+                <img src="asset/bikang.png">
+            </div>
+
+        </div>
+
+        <div class="teks_katalog">
+            <h1>Nikmati Domba Bikang Spesial: Desain Ikon Optimal 160px x 147px dengan Detail Teks 60px</h1>
+
+            <div class="info_katalog">
+                <p>Terjual 1.5 Jt</p>
+                <p>$1.99</p>
+                <p>⭐</p>
+                <p>4.8 (287)</p>
+            </div>
+
+            <div class="pembungkus_penjual">
+                <img src="asset/barn.png">
+                <p style="margin-bottom:1rem;">Peternakan: Domba Jaya Farm</p>
+            </div>
+
+            <h1>Rp300.000</h1>
+            <div class="diskon">
+                <h4>30%</h4>
+                <del style="color:#ccc;">
+                    <h5 style="text-align:right; color:#ccc;">Rp 1.000.000</h5>
+                </del>
+            </div>
+
+            <br><br>
+            <hr><br><br>
+
+            <p style="color:#03cb65; font-size:20px; font-weight:700 ; margin-bottom:1rem;">Pilih ukuran: <span
+                    style="color:#cccccc; ">Size Chart</span></p>
+
+            <div class="pembungkus_card_size">
+                <div class="card_size">
+                    <img src="asset/bikang.png">
+                    <p>Size Chart</p>
+                </div>
+
+                <div class="card_size">
+                    <img src="asset/bikang.png">
+                    <p>Size Chart</p>
+                </div>
+
+                <div class="card_size">
+                    <img src="asset/bikang.png">
+                    <p>Size Chart</p>
+                </div>
+
+                <div class="card_size">
+                    <img src="asset/bikang.png">
+                    <p>Size Chart</p>
+                </div>
+
+                <div class="card_size">
+                    <img src="asset/bikang.png">
+                    <p>Size Chart</p>
+                </div>
+
+                <div class="card_size">
+                    <img src="asset/bikang.png">
+                    <p>Size Chart</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="aksi_katalog">
+            <h1>Beli domba</h1>
+
+            <div class="pembelian_katalog">
+                <h3>Atur Jumlah Pembelian</h3>
+
+                <div class="produk_dibeli">
+                    <img src="asset/bikang.png">
+                    <p>Size Chart</p>
+
+                </div>
+                <br>
+                <hr>
+
+                <div class="pembungkus_tombol">
+                    <div class="tombol">
+                        <button class="kurang" type="">-</button>
+                        <input class="input" placeholder="1" disabled>
+                        <button class="tambah" type="">+</button>
+                    </div>
+                    <h3>Stok: <span>Sisa 9</span></h3>
+                </div>
+
+                <br>
+
+                <del style="color:#ccc;">
+                    <h4 style="text-align:right; color:#ccc;">Rp 1.000.000</h4>
+                </del>
+                <div class="subtotal">
+                    <h3>subtotal</h3>
+                    <h2>Rp300.000</h2>
+                </div>
+
+                <button onclick="window.location.href='cart.html'" class="keranjang">+ Keranjang</button>
+                <button onclick="window.location.href='checkout.html'" class="beli_langsung">+ Beli langsung</button>
+
+                <br><br><br>
+
+                <div class="tambahan">
+                    <div class="chat">
+                        <img src="asset/chat.png">
+                        <p>Chat</p>
+                    </div>
+                    <P>|</P>
+                    <div class="Wishlist">
+                        <img src="asset/Favorite.png">
+                        <p>Wishlist</p>
+                    </div>
+                    <P>|</P>
+                    <div class="share">
+                        <img src="asset/Share.png">
+                        <p>Share</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <!-- footer atas -->
+        <div class="footer-atas">
+            <div class="footer-logo">
+                <div class="pembungkus-footer-logo">
+                    <img src="asset/cursor_sheepvee.png">
+                    <h3>SheepVee</h3>
+                </div>
+                <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                    memberdayakan
+                    peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                    super di Indonesia
+                    yang terintegrasi dan berkelanjutan.</p>
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <a href="about.html">Kisah Kami</a>
+                <a href="about.html">Peternakan Kami</a>
+                <a href="about.html">Testimonial</a>
+            </div>
+            <div class="footer-service">
+                <h3>Service</h3>
+                <a href="product">Domba-Domba</a>
+                <a href="care.html">Sheepvee Care</a>
+                <a href="product.html">Product</a>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Contact US</h3>
+                <a href="contact.html">Contact US</a>
+                <a href="contact.html">Location</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+        <!-- akhir footer atas -->
+    
+        <hr>
+    
+        <!-- footer bawah -->
+        <div class="footer-bawah">
+            <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                    href="https://github.com/Rif340">Rif340.</a></p>
+            <div class="icon">
+                <a
+                    href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i
+                        class="bi bi-whatsapp"></i></a>
+                <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-envelope-at"></i></a>
+            </div>
+    
+        </div>
+    
+    </footer>
+    <!-- akhir footer -->
+</body>
+
+</html>

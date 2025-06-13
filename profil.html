@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sheepvee Profil</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+    <link href="profil.css" rel="stylesheet">
+</head>
+
+<body>
+    <navbar class="navbar2" id="navbar">
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="product.html">Domba-Domba</a>
+                    <a href="product.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <div class="cart">
+            <a href="cart.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <div class="background_navbar2"></div>
+    </navbar>
+
+    <div class="pembungkus_utama">
+        <aside class="bagian_kiri">
+            <div class="pembungkus_edit_akun">
+                <i class="bi bi-person-fill icon-orang"></i>
+                <div class="edit_akun">
+                    <p>arif.340</p>
+                    <a href="#">
+                        <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.54 0L6.987 1.56l3.46 3.48L12 3.48M0 8.52l.073 3.428L3.46 12l6.21-6.18-3.46-3.48"
+                                fill="#9B9B9B" fill-rule="evenodd"></path>
+                        </svg>
+                        Ubah Profil
+                    </a>
+                </div>
+            </div>
+
+            <hr class="pemisah-menu">
+
+            <nav class="menu-profil">
+                <div class="akun_saya">
+                    <img src="https://down-id.img.susercontent.com/file/ba61750a46794d8847c3f463c5e71cc4" alt="akun">
+                    <a href="#">Akun Saya</a>
+                </div>
+                <div class="akun_saya">
+                    <img src="https://down-id.img.susercontent.com/file/f0049e9df4e536bc3e7f140d071e9078" alt="pesanan">
+                    <a href="#">Pesanan Saya</a>
+                </div>
+                <div class="akun_saya">
+                    <img src="https://down-id.img.susercontent.com/file/e10a43b53ec8605f4829da5618e0717c"
+                        alt="notifikasi">
+                    <a href="#">Notifikasi</a>
+                </div>
+                <div class="akun_saya">
+                    <img src="https://down-id.img.susercontent.com/file/84feaa363ce325071c0a66d3c9a88748" alt="voucher">
+                    <a href="#">Voucher Saya</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="bagian_kanan">
+            <table class="tabel-status-pesanan">
+                <thead>
+                    <tr class="judul_tabel1">
+                        <th><a href="#">Semua</a></th>
+                        <th><a href="#">Belum Bayar</a></th>
+                        <th><a href="#">Sedang Dikemas</a></th>
+                        <th><a href="#">Dikirim</a></th>
+                        <th><a href="#">Selesai</a></th>
+                        <th><a href="#">Dibatalkan</a></th>
+                        <th><a href="#">Pengembalian</a></th>
+                    </tr>
+                </thead>
+            </table>
+        
+            <div class="wadah-pencarian-pesanan">
+                <input type="search" placeholder="Cari Berdasarkan Nama Penjual, No Pesanan">
+                <button class="tombol-pencarian-pesanan"><i class="bi bi-search"></i></button>
+            </div>
+        
+            <div class="kartu-pesanan">
+                <header class="header-pesanan">
+                    <div class="info-penjual">
+                        <span class="tag-star">Star</span>
+                        <span class="nama-penjual">Domba Anugrah Berasama</span>
+                        <button class="btn-aksi-penjual">
+                            <i class="bi bi-chat-dots-fill"></i> Chat
+                        </button>
+                        <button class="btn-aksi-penjual">
+                            <i class="bi bi-shop"></i> Kunjungi Toko
+                        </button>
+                    </div>
+                    <div class="status-pesanan status-dibatalkan">
+                        DIBATALKAN
+                    </div>
+                </header>
+                <div class="body-pesanan">
+                    <div class="item-produk">
+                        <img src="asset/bikang.png" alt="Tail Tidy CBR">
+                        <div class="deskripsi-produk">
+                            <p class="nama-produk">Nikmati Domba Bikang Spesial: Desain Ikon Optimal 160px x 147px dengan Detail Teks 60px</p>
+                            <p class="variasi-produk">Variasi: 43Kg</p>
+                            <p class="jumlah-produk">x1</p>
+                        </div>
+                        <div class="harga-produk">
+                            <span class="harga-coret">Rp162.000</span>
+                            <span class="harga-final">Rp142.500</span>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer-pesanan">
+                    <div class="total-pesanan">
+                        <span class="label-total">Total Pesanan:</span>
+                        <span class="angka-total">Rp156.000</span>
+                    </div>
+                    <div class="aksi-pesanan">
+                        <span class="info-pembatalan">Dibatalkan Anda</span>
+                        <div class="grup-tombol-aksi">
+                            <button onclick="window.location.href='checkout.html'" class="btn-utama">Beli Lagi</button>
+                            <button class="btn-sekunder">Tampilkan Rincian Pembatalan</button>
+                            <button class="btn-sekunder">Hubungi Penjual</button>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <div class="kartu-pesanan">
+                <header class="header-pesanan">
+                    <div class="info-penjual">
+                        <img style=" width:55px; height:14px;" src="asset/mall_ori_shope.png">
+                        <span class="nama-penjual">Domba Berkah Jaya</span>
+                        <button class="btn-aksi-penjual">
+                            <i class="bi bi-chat-dots-fill"></i> Chat
+                        </button>
+                        <button class="btn-aksi-penjual">
+                            <i class="bi bi-shop"></i> Kunjungi Toko
+                        </button>
+                    </div>
+                    <div class="status-pesanan-kompleks">
+                        <i class="bi bi-truck"></i>
+                        <span>Pesanan tiba di alamat tujuan. diterima oleh Yang bersangkutan.</span>
+                        <i class="bi bi-question-circle-fill"></i>
+                        <div class="pemisah-status"></div>
+                        <div class="status-utama">TELAH DINILAI</div>
+                    </div>
+                </header>
+        
+                <div class="body-pesanan">
+                    <div class="item-produk">
+                        <img src="asset/bikang.png" alt="bikang">
+                        <div class="deskripsi-produk">
+                            <p class="nama-produk">Nikmati Domba Bikang Spesial: Desain Ikon Optimal 160px x 147px dengan Detail Teks 60px</p>
+                            <p class="variasi-produk">Variasi: 12Kg</p>
+                            <p class="jumlah-produk">x1</p>
+                        </div>
+                        <div class="harga-produk">
+                            <span class="harga-coret">Rp174.000</span>
+                            <span class="harga-final">Rp59.800</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <footer class="footer-pesanan">
+                    <div class="total-pesanan">
+                        <span class="label-total">Total Pesanan:</span>
+                        <span class="angka-total">Rp54.700</span>
+                    </div>
+                    <div class="aksi-pesanan">
+                        <span class="info-penilaian">Menunggu Penjual memberikan nilai</span>
+                        <div class="grup-tombol-aksi">
+                            <button onclick="window.location.href='checkout.html'" class="btn-utama">Beli Lagi</button>
+                            <button class="btn-sekunder">Hubungi Penjual</button>
+                            <button class="btn-sekunder">Tampilkan Penilaian Toko</button>
+                        </div>
+                    </div>
+                </footer>
+            </div> 
+        </main>
+
+    </div>
+</body>
+
+</html>

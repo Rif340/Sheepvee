@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Produk - Sheepvee</title>
+
+    <!-- boostrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- almalik font -->
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+    <!-- css  -->
+    <link rel="stylesheet" href="product.css" />
+
+    <!--  -->
+</head>
+
+<body>
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="product.html">Domba-Domba</a>
+                    <a href="care.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba.." >
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+  
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="cart.html" ><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+    <!-- pembungkus utama -->
+    <div class="pembungkus-utama">
+
+        <!-- coursel -->
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <!-- Slide 1 -->
+                <div class="carousel-slide slide-1 active">
+                    <!-- <div class="slide-content">
+                    <h2 class="slide-title">Mau transaksi lebih hemat?</h2>
+                    <p class="slide-subtitle">Cek promo asyik Tokopedia!</p>
+                    <button class="slide-button">Cek Sekarang</button>
+                </div>
+                <div class="slide-image">
+                    <div class="image-placeholder">
+                        🏪
+                        <div class="floating-icon icon-1">💰</div>
+                        <div class="floating-icon icon-2">✨</div>
+                        <div class="floating-icon icon-3">🎁</div>
+                    </div>
+                </div> -->
+
+                    <!-- gambar -->
+                    <img src="asset/coursel1.png" alt="Promo" style="width: 100%; height: 100%;">
+                    <!-- akhir gambar  -->
+
+                    <div class="background-dots">
+                        <div class="bg-dot bg-dot-1"></div>
+                        <div class="bg-dot bg-dot-2"></div>
+                        <div class="bg-dot bg-dot-3"></div>
+                        <div class="bg-dot bg-dot-4"></div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide slide-2">
+                    <!-- <div class="slide-content">
+                    <h2 class="slide-title">Belanja makin untung!</h2>
+                    <p class="slide-subtitle">Dapatkan cashback hingga 50%</p>
+                    <button class="slide-button">Ambil Promo</button>
+                </div>
+                <div class="slide-image">
+                    <div class="image-placeholder">
+                        💳
+                        <div class="floating-icon icon-1">🎉</div>
+                        <div class="floating-icon icon-2">💎</div>
+                        <div class="floating-icon icon-3">⭐</div>
+                    </div>
+                </div> -->
+
+                    <!-- gambar -->
+                    <img src="asset/coursel2.png" alt="Promo" style="width: 100%; height: 100%;">
+                    <!-- akhir gambar  -->
+
+                    <div class="background-dots">
+                        <div class="bg-dot bg-dot-1"></div>
+                        <div class="bg-dot bg-dot-2"></div>
+                        <div class="bg-dot bg-dot-3"></div>
+                        <div class="bg-dot bg-dot-4"></div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide slide-3">
+                    <!-- <div class="slide-content">
+                    <h2 class="slide-title">Gratis ongkir se-Indonesia!</h2>
+                    <p class="slide-subtitle">Minimum belanja cuma Rp 25.000</p>
+                    <button class="slide-button">Belanja Yuk</button>
+                </div>
+                <div class="slide-image">
+                    <img src="asset/coursel1.png" alt="Promo" style="width: 100%; height: 100%; object-fit: contain;">
+                </div> -->
+
+                    <!-- gambar -->
+                    <img src="asset/coursel3.png" alt="Promo" style="width: 100%; height: 100%;">
+                    <!-- akhir gambar  -->
+
+                    <div class="background-dots">
+                        <div class="bg-dot bg-dot-1"></div>
+                        <div class="bg-dot bg-dot-2"></div>
+                        <div class="bg-dot bg-dot-3"></div>
+                        <div class="bg-dot bg-dot-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <button class="nav-arrow nav-prev" onclick="prevSlide()">‹</button>
+            <button class="nav-arrow nav-next" onclick="nextSlide()">›</button>
+
+            <!-- Dots -->
+            <div class="dots-container">
+                <div class="dot active" onclick="goToSlide(0)"></div>
+                <div class="dot" onclick="goToSlide(1)"></div>
+                <div class="dot" onclick="goToSlide(2)"></div>
+            </div>
+
+            <!-- Promo Label -->
+            <div class="promo-label">Lihat Promo Lainnya</div>
+        </div>
+        <!-- akhir coursel -->
+
+
+        <!-- jenis domba -->
+        <div class="product">
+
+            <!-- domba bikang -->
+            <div class="domba-bikang">
+
+                <!-- awal teks domba bikang -->
+                <div class="teks-domba-bikang">
+                    <h1>Domba bikang</h1>
+                    <a href="">See all</a>
+                </div>
+                <!-- akhir teks domba bikang -->
+
+                <!-- gambar -->
+                <div class="gambar-domba-bikang">
+                    <!-- awal card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba">Bikang Dorper</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Kandang 3008</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang2.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star+</span>Bikang Garut</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Jaya Farm</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang3.png">
+                           <button>+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Bikang Ekor Tipis</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Berkah Domba Nusantara</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang4.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba">Bikang Ekor Gemuk</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Pusat Domba Unggul</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang5.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star+</span>Bikang Sayur</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Sehat Mandiri</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang6.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Bikang Morino</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Sentra Domba Kurban & Aqiqah</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang7.png">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba">Bikang Super</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Barokah Abadi</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star+</span>Bikang Texel</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Gembala Domba Modern</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Bikang Suffolk</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Prima Kualitas</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                </div>
+                <!-- akhir gambar -->
+            </div>
+            <!-- akhir domba bikang -->
+        </div>
+        <!-- akhir jenis domba -->
+
+        <!-- jenis domba -->
+        <div class="product">
+
+            <!-- domba bikang -->
+            <div class="domba-bikang">
+
+                <!-- awal teks domba bikang -->
+                <div class="teks-domba-bikang">
+                    <h1>Domba Jalu</h1>
+                    <a href="">See all</a>
+                </div>
+                <!-- akhir teks domba bikang -->
+
+                <!-- gambar -->
+                <div class="gambar-domba-bikang">
+                    <!-- awal card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">jalu Dorper</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Kandang 3008</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Garut</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Jaya Farm</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Ekor Tipis</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Berkah Domba Nusantara</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Ekor Gemuk</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Pusat Domba Unggul</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Sayur</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Sehat Mandiri</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Morino</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Sentra Domba Kurban & Aqiqah</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Super</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Barokah Abadi</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Texel</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Gembala Domba Modern</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Jalu Suffolk</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Prima Kualitas</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                </div>
+                <!-- akhir gambar -->
+            </div>
+            <!-- akhir domba bikang -->
+        </div>
+        <!-- akhir jenis domba -->
+
+        <div class="product">
+            <!-- domba bikang -->
+            <div class="domba-bikang">
+
+                <!-- awal teks domba bikang -->
+                <div class="teks-domba-bikang">
+                    <h1>Domba Cempe</h1>
+                    <a href="">See all</a>
+                </div>
+                <!-- akhir teks domba bikang -->
+
+                <!-- gambar -->
+                <div class="gambar-domba-bikang">
+                    <!-- awal card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/cempe1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star+</span>Cempe Dorper</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Kandang 3008</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star+</span>Cempe Garut</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Jaya Farm</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Cempe Ekor Tipis</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Berkah Domba Nusantara</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Cempe Ekor Gemuk</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Pusat Domba Unggul</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/cempe1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Cempe Sayur</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Sehat Mandiri</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Cempe Morino</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Sentra Domba Kurban & Aqiqah</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bikang.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Cempe Super</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Barokah Abadi</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/cempe1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Cempe Texel</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Gembala Domba Modern</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/jalu1.png">
+                           <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Cempe Suffolk</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Prima Kualitas</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+
+                    </div>
+                    <!-- akhir card domba -->
+
+                </div>
+                <!-- akhir gambar -->
+            </div>
+            <!-- akhir domba bikang -->
+
+        </div>
+        <!-- akhir jenis domba -->
+
+
+        <div class="product">
+            <!-- domba bikang -->
+            <div class="domba-bikang">
+        
+                <!-- awal teks domba bikang -->
+                <div class="teks-domba-bikang">
+                    <h1>Produk lainnya</h1>
+                    <a href="">See all</a>
+                </div>
+                <!-- akhir teks domba bikang -->
+        
+                <!-- gambar -->
+                <div class="gambar-domba-bikang">
+                    <!-- awal card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/rumput_pakchong.png">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Rumput Pakchong</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 2,5RB+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Kandang 3008</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/bibit_rumput_pakchong.png">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Bibit rumput pakchong</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 4,5RB+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Kandang 3008</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/tong_fermentasi.png">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Tong fermentasi</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Berkah Domba Nusantara</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/mesin_rumput_s8000.webp">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Mesin pencabut rumput s8000</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Pusat Domba Unggul</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/mesin_pemotong_rumput.png">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Mesin pemotong rumput</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Sehat Mandiri</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/mesin_cukur_bulu_domba.jpeg">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Mesin cukur bulu domba</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Sentra Domba Kurban & Aqiqah</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/susu_buat_kambing.jpeg">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Susu kambing anti mencret 100% work</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Barokah Abadi</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/mesin_pencacah_rumput.jpg">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><span class="terpercaya-teks-card-domba">Star +</span>Mesin pencacah rumput</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Gembala Domba Modern</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                    <!-- awal card domba -->
+                    <div class="card-domba">
+        
+                        <!-- awal card-gambar-domba -->
+                        <div class="card-gambar-domba">
+                            <img src="asset/mobil_pickup.png">
+                            <button onclick="window.location.href='katalog.html'">+</button>
+                        </div>
+                        <!-- akhir card-gambar-domba -->
+        
+                        <!-- awal teks card domba -->
+                        <div class="teks-card-domba">
+                            <p class="judul-teks-card-domba"><img src="asset/mall_ori_shope.png">Mobil pickup domba</p>
+                            <h5 class="harga-teks-card-domba">Rp1.000.000</h5>
+                            <p class="rating-teks-card-domba">⭐ 4.8 • 287+ Terjual</p>
+                            <p class="penjual-teks-card-domba">Domba Prima Kualitas</p>
+                            <div class="estimasi_perjalanan">
+                                <p><i class="bi bi-truck"></i> 1-4 hari</p>
+                                <p> | </p>
+                                <p><i class="bi bi-geo-alt"></i> Kab. Karawang</p>
+                            </div>
+                        </div>
+                        <!-- akhir teks card domba -->
+        
+                    </div>
+                    <!-- akhir card domba -->
+        
+                </div>
+                <!-- akhir gambar -->
+            </div>
+            <!-- akhir domba bikang -->
+        
+        </div>
+        <!-- akhir jenis domba -->
+
+    </div>
+    <!-- akhir pembungkus utama -->
+
+    <!-- footer -->
+    <footer>
+        <!-- footer atas -->
+        <div class="footer-atas">
+            <div class="footer-logo">
+                <div class="pembungkus-footer-logo">
+                    <img src="asset/cursor_sheepvee.png">
+                    <h3>SheepVee</h3>
+                </div>
+                <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                    memberdayakan
+                    peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                    super di Indonesia
+                    yang terintegrasi dan berkelanjutan.</p>
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <a href="about.html">Kisah Kami</a>
+                <a href="about.html">Peternakan Kami</a>
+                <a href="about.html">Testimonial</a>
+            </div>
+            <div class="footer-service">
+                <h3>Service</h3>
+                <a href="product">Domba-Domba</a>
+                <a href="care.html">Sheepvee Care</a>
+                <a href="product.html">Product</a>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Contact US</h3>
+                <a href="contact.html">Contact US</a>
+                <a href="contact.html">Location</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+        <!-- akhir footer atas -->
+    
+        <hr>
+    
+        <!-- footer bawah -->
+        <div class="footer-bawah">
+            <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                    href="https://github.com/Rif340">Rif340.</a></p>
+            <div class="icon">
+                <a href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-envelope-at"></i></a>
+            </div>
+    
+        </div>
+    
+    </footer>
+    <!-- akhir footer -->
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev');
+            });
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+
+            // Add active class to current slide and dot
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+
+            // Add prev class to previous slide for smooth transition
+            const prevIndex = (index - 1 + totalSlides) % totalSlides;
+            slides[prevIndex].classList.add('prev');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Auto-play functionality
+        setInterval(nextSlide, 5000);
+
+        // Initialize
+        showSlide(0);
+    </script>
+
+    <!-- search -->
+    <script>
+    const searchInput = document.getElementById("searchInput");
+        const dropdown = document.getElementById("dropdownHasil");
+        const productCards = document.querySelectorAll(".card-domba");
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            console.log("Search form submitted with:", searchInput.value);
+            dropdown.style.display = "none";
+        }
+
+        searchInput.addEventListener("input", function () {
+            const keyword = this.value.toLowerCase().trim();
+            dropdown.innerHTML = "";
+            dropdown.style.display = "none";
+
+            if (keyword === "") {
+                return;
+            }
+
+            const uniqueDisplayNames = new Set();
+            let resultsFound = 0;
+
+            productCards.forEach((card) => {
+                const titleElement = card.querySelector(".judul-teks-card-domba");
+                let sheepDisplayName = "";
+
+                if (titleElement) {
+                    titleElement.childNodes.forEach((node) => {
+                        if (node.nodeType === Node.TEXT_NODE) {
+                            sheepDisplayName += node.textContent.trim();
+                        }
+                    });
+                    sheepDisplayName = sheepDisplayName.trim();
+                }
+
+                let sheepCategoryText = "";
+                const categorySection = card.closest('.product, .domba-bikang');
+                if (categorySection) {
+                    const categoryHeader = categorySection.querySelector('.teks-domba-bikang h1');
+                    if (categoryHeader) {
+                        sheepCategoryText = categoryHeader.textContent.toLowerCase().trim();
+                    }
+                }
+
+                const searchableTextContent = `${sheepDisplayName.toLowerCase()} ${sheepCategoryText}`;
+                const sheepDisplayNameLower = sheepDisplayName.toLowerCase();
+
+                if (searchableTextContent.includes(keyword) && sheepDisplayName && !uniqueDisplayNames.has(sheepDisplayNameLower)) {
+                    uniqueDisplayNames.add(sheepDisplayNameLower);
+
+                    const li = document.createElement("li");
+                    li.textContent = sheepDisplayName;
+
+                    li.onclick = () => {
+                        searchInput.value = sheepDisplayName;
+                        dropdown.style.display = "none";
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    };
+                    dropdown.appendChild(li);
+                    resultsFound++;
+                }
+            });
+
+            if (resultsFound > 0) {
+                dropdown.style.display = "block";
+            }
+        });
+
+        document.addEventListener("click", function (e) {
+            if (e.target !== searchInput && !dropdown.contains(e.target)) {
+                dropdown.style.display = "none";
+            }
+        });
+    </script>
+    
+    <!-- akhir search -->
+</body>
+
+</html>

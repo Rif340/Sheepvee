@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Tentang Sheepvee</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+<script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+<!-- boostrap icon cdn -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- almalik font -->
+<link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+<!-- css -->
+<link href="contact.css" rel="stylesheet">
+
+<style>
+    /* navbar */
+    .background_navbar2 {
+        box-shadow: 1px 1px 10px 7px rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow: 1px 1px 10px 7px rgba(0, 0, 0, 0.22);
+        -moz-box-shadow: 1px 1px 10px 7px rgba(0, 0, 0, 0.22);
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        background-color: white;
+    }
+
+    /* Ubah ini */
+    .navbar2 {
+        z-index: 8;
+        position: sticky;
+        display: flex;
+        width: 100%;
+        height: 100px;
+        justify-content: space-evenly;
+        top: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Tambahkan ini: efek sticky saat scroll */
+    .navbar2.fixed {
+        position: fixed;
+    }
+
+    .nav-logo2 {
+        display: flex;
+        position: relative;
+        z-index: 6;
+    }
+
+    .nav-menu2 {
+        gap: 3rem;
+        display: flex;
+        position: relative;
+        z-index: 6;
+        align-items: center;
+    }
+
+    .nav-menu2>a,
+    .nav-menu2 .dropdown2>a {
+        text-decoration: none;
+        color: #1e3c49;
+        text-shadow: 1px 1px white;
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .nav-menu2 .arrow {
+        text-decoration: none;
+        color: #1e3c49;
+        font-size: 10px;
+        display: inline-block;
+        text-shadow: none;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+        transform: rotate(180deg);
+    }
+
+    /* --- Dropdown CSS --- */
+    .nav-menu2 .dropdown2 {
+        position: relative;
+    }
+
+    .hover-bridge2 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        z-index: 9;
+    }
+
+    .dropdown-content2 {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        background: linear-gradient(#6a994e, #386);
+        min-width: 180px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+        border-radius: 8px;
+        margin-top: 10px;
+        padding: 6px 0;
+        opacity: 0;
+        padding: 7px;
+        visibility: hidden;
+        transform: translateX(-50%) translateY(10px);
+        transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0s linear 0.25s;
+        pointer-events: none;
+    }
+
+    .dropdown-content2::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #93d25e;
+    }
+
+    .dropdown-content2 a {
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: 700;
+        display: block;
+        white-space: nowrap;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .dropdown-content2 a:hover {
+        background-color: #3b8a63;
+        border-radius: 7px;
+    }
+
+    .nav-menu2 .dropdown2:hover .dropdown-content2 {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+        transition-delay: 0s;
+        pointer-events: auto;
+    }
+
+    .nav-menu2 .dropdown2:hover .arrow {
+        transform: rotate(0deg);
+    }
+
+    .nav-menu2 .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        transform: rotate(180deg);
+        margin-left: 5px;
+    }
+
+    .nav-menu2 .dropdown2 {
+        position: relative;
+    }
+
+    .nav-menu2 .dropdown>a {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-us2 {
+        padding-top: 2rem;
+        position: relative;
+        z-index: 6;
+    }
+
+    .contact-us2 .input-wrapper {
+        position: relative;
+        width: 250px;
+    }
+
+    .contact-us2 .input-wrapper i {
+        position: absolute;
+        top: 35%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: #5b5d6b;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .contact-us2 input {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #5b5d6b;
+        padding: 10px 10px 10px 35px;
+        color: black;
+        opacity: 80%;
+        font-weight: 200;
+        height: 35px;
+    }
+
+    .contact-us2 input:focus {
+        border: 1px solid #09c819;
+        outline: none;
+        color: #09c819;
+    }
+
+    /* input */
+
+    /* dropdown input */
+    .dropdown-hasil {
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        width: 100%;
+        max-width: 250px;
+        margin-top: 5px;
+        list-style: none;
+        padding: 0;
+        display: none;
+        z-index: 1000;
+    }
+
+    .dropdown-hasil li {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .dropdown-hasil li:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* akhir dropdown input */
+
+    .cart {
+        font-size: 24px;
+        color: #3a6b35;
+        z-index: 6;
+        padding-top: 2rem;
+    }
+
+    .cart a {
+        text-decoration: none;
+        color: #3a6b35;
+    }
+
+    .user2 {
+        padding-top: 2rem;
+        position: relative;
+        z-index: 6;
+    }
+
+    .isi_user2 {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-color: #3a6b35;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #09c819;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 0 1px #09c819;
+        position: relative;
+        transition: transform 0.2s ease-in-out;
+        filter: drop-shadow(1px 1px 2px white);
+    }
+
+    .isi_user2 i {
+        color: white;
+    }
+
+    .nav-logo2 h1 {
+        padding-top: 2rem;
+        font-family: "Almalik", sans-serif;
+        font-size: 28px;
+        background: -webkit-linear-gradient(#4a90af, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 50px;
+    }
+
+    /* akhi navbar */
+</style>
+
+<body>
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Domba-Domba</a>
+                    <a href="care.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="cart.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-info-header">
+                Kami Siap Membantu Anda!
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                        </svg>
+                    </div>
+                    <h3>Phone Number</h3>
+                    <p>+62-858-8806-0024</p>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                        </svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p>muhammadarifu340@gmail.com<br>2410631170034@student.unsika.ac.id</p>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                        </svg>
+                    </div>
+                    <h3>Location</h3>
+                    <p>MF27+PF6, Jl. Raya Pasirmalang, Parakan, Kec. Tirtamulya, Karawang, Jawa Barat 41372</p>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                        </svg>
+                    </div>
+                    <h3>Working Hours</h3>
+                    <p>Monday To Saturday<br>09:00 AM To 06:00 PM</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <div class="contact-form-header">
+                Kembangkan Bisnis Anda Secara Online!<br>
+            </div>
+
+            <div class="form-content">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">👤 First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">👤 Last Name</label>
+                            <input type="text" id="lastName" name="lastName">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mobile">📱 Mobile No <span class="required">*</span></label>
+                            <input type="tel" id="mobile" name="mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">✉️ Email ID <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">🏢 Company Name <span class="required">*</span></label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Submit
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <div class="lokasi">
+        <div class="tekslokasi">
+            <h1>Maps Peternakan Kami</h1>
+            <p>Gunakan peta ini untuk merencanakan kunjungan Anda ke peternakan Sheepvee kami. Kami mudah diakses dan
+                siap menyambut
+                Anda.</p>
+        </div>
+
+        <div class="maps-lokasi">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d305.91327999912!2d107.4633462740972!3d-6.348761237324135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6971de344fa545%3A0xd590e5516e3b3b07!2sKandang3008!5e0!3m2!1sid!2sid!4v1749572502597!5m2!1sid!2sid"
+                width="100%" height="450" style="border:0; padding-inline:2rem;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <!-- footer atas -->
+        <div class="footer-atas">
+            <div class="footer-logo">
+                <div class="pembungkus-footer-logo">
+                    <img src="asset/cursor_sheepvee.png">
+                    <h3>SheepVee</h3>
+                </div>
+                <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                    memberdayakan
+                    peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                    super di Indonesia
+                    yang terintegrasi dan berkelanjutan.</p>
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <a href="about.html">Kisah Kami</a>
+                <a href="about.html">Peternakan Kami</a>
+                <a href="about.html">Testimonial</a>
+            </div>
+            <div class="footer-service">
+                <h3>Service</h3>
+                <a href="product.html">Domba-Domba</a>
+                <a href="care.html">Sheepvee Care</a>
+                <a href="product.html">Product</a>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Contact US</h3>
+                <a href="contact.html">Contact US</a>
+                <a href="contact.html">Location</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+        <!-- akhir footer atas -->
+
+        <hr>
+
+        <!-- footer bawah -->
+        <div class="footer-bawah">
+            <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                    href="https://github.com/Rif340">Rif340.</a></p>
+            <div class="icon">
+                <a
+                    href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i
+                        class="bi bi-whatsapp"></i></a>
+                <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-envelope-at"></i></a>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- akhir footer -->
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.innerHTML = 'Submitting...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    </script>
+
+</body>
+
+</html>

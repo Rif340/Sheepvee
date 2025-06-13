@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sheepvee - Keranjang</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+    <!-- boostrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- almalik font -->
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+    <!-- css -->
+    <link href="cart.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="product.html">Domba-Domba</a>
+                    <a href="product.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="cart.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+    <div class="table_component" role="region" tabindex="0">
+
+        <table style="margin-bottom:2rem;">
+            <caption style="margin-bottom:2rem; font-size:50px; font-weight:700; color:#00aa5b">Keranjang Belanja
+            </caption>
+            <thead>
+                <tr>
+                    <th style="width:58px;"><input type="checkbox"></th>
+                    <th>Produk </th>
+                    <th style="width:237px; text-align: left;">Judul</th>
+                    <th style="width:188px; text-align: left;"></th>
+                    <th style="width:173px;">Harga Satuan</th>
+                    <th>Kuantitas</th>
+                    <th>Total Harga</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+        </table>
+
+        <!-- tabel 1 -->
+        <table style="margin-bottom:2rem;">
+            <thead>
+                <tr>
+                    <th style="width:58px;"><input type="checkbox"></th>
+                    <th><img style="width:70px; height:20px;" src="asset/mall_ori_shope.png"></th>
+                    <th style="width:237px; text-align: left;">Sentra Domba Kurban & Aqiqah</th>
+                    <th><a href="#"><img style="width:20px;height:20px;" src="asset/chatpenjual.png"></a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border:none;"><input type="checkbox"></td>
+                    <td style=" height:80px;"><img style="width:80px; height:80px; text-align: center;"
+                            src="asset/bikang.png"></td>
+                    <td style="width:237px; text-align: left;">JAS DOKTER/ SNELI/ JAS KOAS/ WANITA LENGAN PENDEK MERK
+                        DUA SAUDARA ORIGINAL
+                    </td>
+                    <td style="width:188px; text-align: left;">Variasi <i class="bi bi-caret-down-fill"
+                            style="font-size:11px;"></i><br>Besar</td>
+                    <td style="width:173px; text-align: center;">Rp.200.000</td>
+                    <td>
+                        <button style="width:32px;height:32px;">-</button>
+                        <input style="width:50px;height:32px; text-align:center;" type="" placeholder="1" disabled>
+                        <button style="width:32px;height:32px;">+</button>
+                    </td>
+                    <td style="color:#ee4d2d;">Rp.200.000</td>
+                    <td>
+                        <button style="padding:1rem;">Hapus</button>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="8" style="padding-left:1rem; text-align:left; color: #333;">
+                        <img loading="lazy" class="uXN1L5 lazyload" srcset=""
+                            src="https://down-id.img.susercontent.com/file/sg-11134270-7rfid-m30kymxdm90kc6"
+                            height="20">
+                        Gratis Ongkir s/d Rp30.000 dengan min. belanja Rp0; Gratis Ongkir s/d Rp500.000 dengan min.
+                        belanja Rp300.000
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- tabel 1 -->
+        <table style="margin-bottom:2rem;">
+            <thead>
+                <tr>
+                    <th style="width:58px;"><input type="checkbox"></th>
+                    <th><span class="terpercaya-teks-card-domba">Star+</span></th>
+                    <th style="width:237px; text-align: left;">Sentra Domba Kurban & Aqiqah</th>
+                    <th><a href="#"><img style="width:20px;height:20px;" src="asset/chatpenjual.png"></a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border:none;"><input type="checkbox"></td>
+                    <td style=" height:80px;"><img style="width:80px; height:80px; text-align: center;"
+                            src="asset/bikang.png">
+                    </td>
+                    <td style="width:237px; text-align: left;">JAS DOKTER/ SNELI/ JAS KOAS/ WANITA LENGAN PENDEK MERK
+                        DUA SAUDARA ORIGINAL
+                    </td>
+                    <td style="width:188px; text-align: left;">Variasi <i class="bi bi-caret-down-fill"
+                            style="font-size:11px;"></i><br>Besar</td>
+                    <td style="width:173px; text-align: center;">Rp.200.000</td>
+                    <td>
+                        <button style="width:32px;height:32px;">-</button>
+                        <input style="width:50px;height:32px; text-align:center;" type="" placeholder="1" disabled>
+                        <button style="width:32px;height:32px;">+</button>
+                    </td>
+                    <td style="color:#ee4d2d;">Rp.200.000</td>
+                    <td>
+                        <button style="padding:1rem;">Hapus</button>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="8" style="padding-left:1rem; text-align:left; color: #333;">
+                        <img loading="lazy" class="uXN1L5 lazyload" srcset=""
+                            src="https://down-id.img.susercontent.com/file/sg-11134270-7rfid-m30kymxdm90kc6"
+                            height="20">
+                        Gratis Ongkir s/d Rp30.000 dengan min. belanja Rp0; Gratis Ongkir s/d Rp500.000 dengan min.
+                        belanja Rp300.000
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- tabel 1 -->
+        <table style="margin-bottom:2rem;">
+            <thead>
+                <tr>
+                    <th style="width:58px;"><input type="checkbox"></th>
+                    <th><span class="terpercaya-teks-card-domba">Star+</span></th>
+                    <th style="width:237px; text-align: left;">Sentra Domba Kurban & Aqiqah</th>
+                    <th><a href="#"><img style="width:20px;height:20px;" src="asset/chatpenjual.png"></a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border:none;"><input type="checkbox"></td>
+                    <td style=" height:80px;"><img style="width:80px; height:80px; text-align: center;"
+                            src="asset/bikang.png">
+                    </td>
+                    <td style="width:237px; text-align: left;">JAS DOKTER/ SNELI/ JAS KOAS/ WANITA LENGAN PENDEK MERK
+                        DUA SAUDARA ORIGINAL
+                    </td>
+                    <td style="width:188px; text-align: left;">Variasi <i class="bi bi-caret-down-fill"
+                            style="font-size:11px;"></i><br>Besar</td>
+                    <td style="width:173px; text-align: center;">Rp.200.000</td>
+                    <td>
+                        <button style="width:32px;height:32px;">-</button>
+                        <input style="width:50px;height:32px; text-align:center;" type="" placeholder="1" disabled>
+                        <button style="width:32px;height:32px;">+</button>
+                    </td>
+                    <td style="color:#ee4d2d;">Rp.200.000</td>
+                    <td>
+                        <button style="padding:1rem;">Hapus</button>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="8" style="padding-left:1rem; text-align:left; color: #333;">
+                        <img loading="lazy" class="uXN1L5 lazyload" srcset=""
+                            src="https://down-id.img.susercontent.com/file/sg-11134270-7rfid-m30kymxdm90kc6"
+                            height="20">
+                        Gratis Ongkir s/d Rp30.000 dengan min. belanja Rp0; Gratis Ongkir s/d Rp500.000 dengan min.
+                        belanja Rp300.000
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="checkout_ngambang">
+            <div class="checkout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                    <path fill="#EE4D2D" fill-rule="evenodd"
+                        d="M6.836 6.8V5h.99v1.8zm0 2.8V7.8h.99v1.8zm0 2.799v-1.8h.99v1.8zm0 2.801v-1.8h.99v1.8z"
+                        clip-rule="evenodd" />
+                    <path fill="#EE4D2D" fill-rule="evenodd"
+                        d="M18 5.5v3.375h-1.2c-.663 0-1.2.504-1.2 1.125s.537 1.125 1.2 1.125H18V14.5c0 .828-.716 1.5-1.6 1.5H3.6c-.884 0-1.6-.672-1.6-1.5v-3.375h.8c.663 0 1.2-.504 1.2-1.125s-.537-1.125-1.2-1.125H2V5.5C2 4.672 2.716 4 3.6 4h12.8c.884 0 1.6.672 1.6 1.5m-14.8 0c0-.207.18-.375.4-.375h12.8c.22 0 .4.168.4.375v2.25c-1.325 0-2.4 1.007-2.4 2.25s1.075 2.25 2.4 2.25v2.25c0 .207-.18.375-.4.375H3.6c-.22 0-.4-.168-.4-.375v-2.281c1.135-.179 2-1.104 2-2.219s-.865-2.04-2-2.219z"
+                        clip-rule="evenodd" />
+                </svg>
+                <p class="teks_vocher">Vocher Sheepvee</p>
+
+                <a class="modal_vocher" href="#">Gunakan/ Masukan Kode</a>
+            </div>
+
+            <div class="menu_checkout">
+                <input type="checkbox" id="total_barang"><label for="total_barang">pilih semua</label>
+                <button class="hapus-pilihan" type"submit">Hapus</button>
+                <p>Total produk (0 produk)</p>
+                <button onclick="window.location.href='checkout.html'" class="submit_barang">Checkout Sekarang </button>
+            </div>
+        </div>
+
+        <!-- <div class="coupon-torn">
+            <div class="torn-content">
+                <img class="gambar_vocher" src="asset/gratis_ongkir.png">
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <!-- footer atas -->
+        <div class="footer-atas">
+            <div class="footer-logo">
+                <div class="pembungkus-footer-logo">
+                    <img src="asset/cursor_sheepvee.png">
+                    <h3>SheepVee</h3>
+                </div>
+                <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                    memberdayakan
+                    peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                    super di Indonesia
+                    yang terintegrasi dan berkelanjutan.</p>
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <a href="about.html">Kisah Kami</a>
+                <a href="about.html">Peternakan Kami</a>
+                <a href="about.html">Testimonial</a>
+            </div>
+            <div class="footer-service">
+                <h3>Service</h3>
+                <a href="product.html">Domba-Domba</a>
+                <a href="care.html">Sheepvee Care</a>
+                <a href="product.html">Product</a>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Contact US</h3>
+                <a href="contact.html">Contact US</a>
+                <a href="contact.html">Location</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+        <!-- akhir footer atas -->
+
+        <hr>
+
+        <!-- footer bawah -->
+        <div class="footer-bawah">
+            <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                    href="https://github.com/Rif340">Rif340.</a></p>
+            <div class="icon">
+                <a
+                    href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i
+                        class="bi bi-whatsapp"></i></a>
+                <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-envelope-at"></i></a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const stickyCheckout = document.querySelector(".checkout_ngambang");
+            const footer = document.querySelector("footer");
+
+            if (!stickyCheckout || !footer) return; // Antisipasi elemen tidak ditemukan
+
+            function checkFooterVisibility() {
+                const footerRect = footer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                const footerVisible = footerRect.top < windowHeight && footerRect.bottom > 0;
+
+                if (footerVisible) {
+                    stickyCheckout.classList.add("hide");
+                } else {
+                    stickyCheckout.classList.remove("hide");
+                }
+            }
+
+            // Jalankan fungsi pengecekan saat scroll dan resize
+            window.addEventListener("scroll", checkFooterVisibility);
+            window.addEventListener("resize", checkFooterVisibility);
+            window.addEventListener("load", checkFooterVisibility); // ← Tambahan penting
+
+            checkFooterVisibility(); // Jalankan saat pertama dimuat
+        });
+    </script>
+</body>
+
+</html>

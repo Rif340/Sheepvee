@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sheepvee - Checkout</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+    <!-- boostrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- almalik font -->
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+    <!-- css -->
+    <link href="checkout.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="product.html">Domba-Domba</a>
+                    <a href="product.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="cart.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+    <div class="pembungkus_utama">
+
+        <!-- tabel pertama -->
+        <table style="margin-bottom:2rem;width:100%; overflow:hidden;">
+            <caption style="    background-image: repeating-linear-gradient(45deg, #6fa6d6, #6fa6d6 33px, transparent 0, transparent 41px, #f18d9b 0, #f18d9b 74px, transparent 0, transparent 82px);
+            background-position-x: -30px;
+            background-size: 116px 3px;
+            height: 3px;
+            width: 100%;" </caption>
+            <thead>
+                <tr>
+                    <th style="color:#00aa5b; width:260px; text-align:jutify;"><i class="bi bi-geo-alt-fill"></i> Alamat
+                        Pengiriman</th> 
+                    <th width="650px;"></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th style="text-align:left; padding-left:3rem; color:black;font-weight:700;">Muhammad Arif
+                        Wicaksono<br>(+62) 858-8806-0024</th>
+                    <th style="text-align:left; padding-left:3rem; color:black;">
+                        Tangkil Kaler, RT.01/RW.04, Jl. Raya Parakan No. 71, Desa Cikampek Utara, Kecamatan Kotabaru,
+                        Kabupaten Karawang, Jawa Barat, Kode pos 241323
+                    </th>
+                    
+                   
+                    <th style="display:flex;">
+                        <p style="color:#ee4d2d; padding-left:rem;height:max-content;margin-right:10px;padding: 2px 5px; border:1px solid #ee4d2d;">Utama</p>
+                        <a style="color:#0055aa; text-decoration:none; font-weight:700;" href="#">Ubah</a></th>
+                </tr>
+                <tr>
+                    <td colspan="8"
+                        style="width:300px; height:60px; text-align:left; padding-left:3rem; display:flex; gap:1rem;">
+                        <input type="checkbox">
+                        <p style="padding-top:1.3rem;">Kirim Sebagai Dropshipper</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- tabel pertama -->
+
+        <!-- tabel kedua -->
+        <table style="margin-bottom:2rem; overflow:hidden; box-sizing:border-box;">
+            <thead>
+                <tr>
+                    <th style="display:flex; align-items:center; padding-left:1rem;">Produk Dipesan</th>
+                    <th></th>
+                    <th>Harga Satuan</th>
+                    <th>Jumlah</th>
+                    <th>Subtotal Produk</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr style="height:50px; overflow:hidden; border-bottom:none;">
+                    <td style="width:400px;display:flex; align-items:center; gap:1rem; padding-left:1rem;">
+                        <span class="terpercaya-teks-card-domba">Star+</span>
+                        <p>Domba Dorper</p>
+                        <P>|</P>
+                        <svg style="width:20px;height:20px;" viewBox="0 0 16 16" class="shopee-svg-icon FpgzUK">
+                            <g fill-rule="evenodd">
+                                <path fill="#00bfa5"
+                                    d="M15 4a1 1 0 01.993.883L16 5v9.932a.5.5 0 01-.82.385l-2.061-1.718-8.199.001a1 1 0 01-.98-.8l-.016-.117-.108-1.284 8.058.001a2 2 0 001.976-1.692l.018-.155L14.293 4H15zm-2.48-4a1 1 0 011 1l-.003.077-.646 8.4a1 1 0 01-.997.923l-8.994-.001-2.06 1.718a.5.5 0 01-.233.108l-.087.007a.5.5 0 01-.492-.41L0 11.732V1a1 1 0 011-1h11.52zM3.646 4.246a.5.5 0 000 .708c.305.304.694.526 1.146.682A4.936 4.936 0 006.4 5.9c.464 0 1.02-.062 1.608-.264.452-.156.841-.378 1.146-.682a.5.5 0 10-.708-.708c-.185.186-.445.335-.764.444a4.004 4.004 0 01-2.564 0c-.319-.11-.579-.258-.764-.444a.5.5 0 00-.708 0z">
+                                </path>
+                            </g>
+                        </svg><a style="text-decoration:none; color:#00bfa5;" href="#">Chat Sekarang</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="display:flex;  padding-left:1rem;"><img style="width:40px;height:40px;"
+                            src="asset/bikang.png">
+                        <p style="padding-top:1rem; padding-left:1rem;">Domba Dorper Pilihan Anda</p>
+                    </td>
+                    <td></td>
+                    <td>Rp.1.000.000</td>
+                    <td>2</td>
+                    <td>Rp.2.000.000</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align:right; padding-right:1rem;">
+                        <span style="display:inline-flex; align-items:center; gap:0.5rem;">
+                            <img src="asset\promo-code.png">
+                            <span>Voucher toko</span>
+                        </span>
+                    </td>
+                    <td colspan="3" style="text-align:right; padding-right:6rem; color:#0055aa; font-weight:700;">
+                        <a href="#" style="text-decoration:none;">Pilih Voucher</a>
+                    </td>
+                </tr>
+                <tr style=" box-sizing:border-box;background:#fafdff; overflow:hidden;height:100px;padding:4rem;">
+                    <th style="border: 1px dashed #ccc;  text-align:left;padding-left:5px;">
+                        <p style="padding-left:1rem;">Pesan:</p><input placeholder="(opsional) Tinggalkan pesan" style="padding-left:5px;
+                    border: 1px solid grey; height:29px;padding-block:rem;padding:20px;" type="text">
+                    </th>
+                    <th style="border: 1px dashed #ccc; color:black;">Opsi Pengiriman</th>
+                    <th style="gap:10rem;border: 1px dashed #ccc;  text-align:left;padding-left:5px;">
+                        <p style="color:black;padding-bottom:1px;">regurler</p>
+                        <p style="font-size:12px; color:black;padding-bottom:10px;">garansi tiba 15 juni</p>
+                        <p style="font-size:12px; color:grey;">Voucher s/d Rp10.000 jika pesanan belum tiba 15 Jun 2025.
+                        </p>
+                    </th>
+                    <th style="border: 1px dashed #ccc;color:#0055aa; font-weight:700;"><a href="#"
+                            style="text-decoration:none;">Ubah</a></th>
+                    <th style="border: 1px dashed #ccc;">Rp2.000.000</th>
+                </tr>
+                <tr style="height:40px;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total Pesanan (2 Produk):</td>
+                    <td style="color:#ee4d2d;">Rp2.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- tabel 3 -->
+        <table style="width: 100%; margin-bottom: 2rem; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th colspan="2" style="padding: 0.75rem 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <img src="asset/promo-code.png" alt="Voucher" style="width: 20px; height: 20px;">
+                                <span style="color: black;">Voucher Sheepvee</span>
+                            </span>
+                            <a href="#" style="color: #0055aa; font-weight: 700; text-decoration: none;">
+                                Pilih Voucher
+                            </a>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- isi jika ada -->
+            </tbody>
+        </table>
+
+        <table style="width: 100%; margin-bottom: 2rem; border-collapse: collapse;">
+            <thead>
+                <tr style="vertical-align: top;">
+                    <th style="text-align: left; padding-top:2rem; padding-left:1rem;width: 200px; color:black">Metode
+                        Pembayaran</th>
+                    <th style="padding: 1rem;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <a href="#" class="metode-pembayaran active">
+                                Saldo Sheepvee Pay (Rp99.999.999)
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                Saldo Sheepvee Pay
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                Saldo Sheepvee Pay
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                Alfamart
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                Indomaret
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                Kartu Kredit/Debit
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                Transfer Bank
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                COD
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                Sheepvee Pay saldo
+                                <span class="corner-icon"></span>
+                            </a>
+                            <a href="#" class="metode-pembayaran active">
+                                E-Wallet
+                                <span class="corner-icon"></span>
+                            </a>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="padding:2rem;border: 1px solid #dededf; vertical-align: top;">
+                    <td style="vertical-align: top; padding: 2rem;">
+                        <div class="bulet_icon_pembayaran"></div>
+                        <i class="bi bi-bank"></i>
+                        <span>Pilih Bank</span>
+                    </td>
+
+
+                    <td style="vertical-align: top; padding: 1rem;">
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; width: fit-content; max-width: 528px;">
+                            <a href="#"><img style="width:120px; border-radius:5px;" src="asset/bank_jago.jpg"></a>
+                            <a href="#"><img style="width:120px; border-radius:5px;" src="asset/bank_bca.png"></a>
+                            <a href="#"><img style="width:120px; border-radius:5px;" src="asset/bank_bri.png"></a>
+                            <a href="#"><img style="width:120px; border-radius:5px;" src="asset/seabank.jpeg"></a>
+                            <a href="#"><img style="width:120px; border-radius:5px;" src="asset/bank_mandiri.png"></a>
+                            <a href="#"><img style="width:120px; border-radius:5px; border:1px solid grey;"
+                                    src="asset/paypal.webp"></a>
+                            <a href="#"><img style="width:120px; border-radius:5px; border:1px solid grey;"
+                                    src="asset/bank_bni.png"></a>
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding: 1rem;">
+                        <div style="display: flex; justify-content: end; gap: 7.2rem;">
+                            <span style="color: #757573; min-width: 200px; text-align: right;">Subtotal Pesanan</span>
+                            <span>Rp2.000.000</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 1rem;">
+                        <div style="display: flex; justify-content: end; gap: 7.5rem;">
+                            <span style="color: #757573; min-width: 200px; text-align: right;">Subtotal
+                                Pengiriman</span>
+                            <span>Rp12.000</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 1rem;">
+                        <div style="display: flex; justify-content: end; gap:  11.2rem;">
+                            <span style="color: #757573; min-width: 200px; text-align: right;">Biaya Layanan</span>
+                            <span>Rp500</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 1rem;">
+                        <div style="display: flex; justify-content: end; gap: 2rem;">
+                            <span style="color: #757573; min-width: 200px; text-align: right;">Total Pembayaran</span>
+                            <span style="font-size: 30px; color: #ee4d2d;">Rp2.012.500</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr style="padding:2rem;border: 1px solid #dededf; vertical-align: top;">
+                    <td colspan="2" style="padding: 1rem;">
+                        <div style="display: flex; justify-content: end; gap: 2rem;">
+                            <button onclick="window.location.href='validasi_checkout.html'"
+                                style="width:210px;height:40px;padding:rem;margin:1rem; font-size:16px; border-radius:5px; border:none; background:#EE4D2D; color:white ;cursor:pointer;">Buat
+                                Pesanan</button>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <!-- footer atas -->
+        <div class="footer-atas">
+            <div class="footer-logo">
+                <div class="pembungkus-footer-logo">
+                    <img src="asset/cursor_sheepvee.png">
+                    <h3>SheepVee</h3>
+                </div>
+                <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                    memberdayakan
+                    peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                    super di Indonesia
+                    yang terintegrasi dan berkelanjutan.</p>
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <a href="about.html">Kisah Kami</a>
+                <a href="about.html">Peternakan Kami</a>
+                <a href="about.html">Testimonial</a>
+            </div>
+            <div class="footer-service">
+                <h3>Service</h3>
+                <a href="product">Domba-Domba</a>
+                <a href="care.html">Sheepvee Care</a>
+                <a href="product.html">Product</a>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Contact US</h3>
+                <a href="contact.html">Contact US</a>
+                <a href="contact.html">Location</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+        <!-- akhir footer atas -->
+    
+        <hr>
+    
+        <!-- footer bawah -->
+        <div class="footer-bawah">
+            <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                    href="https://github.com/Rif340">Rif340.</a></p>
+            <div class="icon">
+                <a
+                    href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i
+                        class="bi bi-whatsapp"></i></a>
+                <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-envelope-at"></i></a>
+            </div>
+    
+        </div>
+    
+    </footer>
+    <!-- akhir footer -->
+
+</body>
+
+</html>

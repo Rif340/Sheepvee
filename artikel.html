@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sheepvee - Artikel</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+    <!-- boostrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- almalik font -->
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+    <!-- css -->
+    <link href="artikel.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="product.html">Domba-Domba</a>
+                    <a href="product.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="checkout.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+
+    <div class="pembungkusutama">
+
+        <div class="utama">
+            <div class="nafigasi">
+                <a href="beranda_artikel.html" class="nafigasihome">Home</a>
+                <span><i class="bi bi-chevron-right"></i></span>
+                <p>Artikel</p>
+            </div>
+
+            <h1>Rahasia Pakan Domba Terbaik Untuk Pertumbuhan Domba Optimal</h1>
+
+            <div class="kategori">
+                <a href="#">Materi Edukasi</a>
+                <p>2 Juni 2025, 09:50 WIB</p>
+                <p>|</p>
+                <p>Ditinjau Oleh Redaksi Sheepvee</p>
+            </div>
+
+            <i class="subtema">
+                <p>Sama seperti manusia membutuhkan nutrisi terbaik untuk mencapai performa maksimal, domba juga
+                    memerlukan pakan yang tepat
+                    agar bisa tumbuh sehat, cepat, dan produktif. Memberikan pakan asal-asalan bisa menghambat
+                    pertumbuhan dan menurunkan
+                    hasil panen. Inilah rahasia pakan terbaik untuk pertumbuhan domba optimal.
+                </p>
+            </i>
+
+            <img src="asset/pakchong2.jpg">
+
+            <h3>Apa sih rahasianya ?
+            </h3>
+
+            <p>Pertumbuhan domba yang sehat dan optimal sangat bergantung pada kualitas pakan yang
+                diberikan. Banyak peternak sukses
+                menyadari bahwa rahasia utama produktivitas ternak terletak pada pakan yang tepat, seimbang, dan sesuai
+                kebutuhan gizi
+                domba. Berikut ini beberapa poin penting yang menjadi rahasia keberhasilan dalam memberikan pakan
+                terbaik untuk domba.</p><br>
+
+            <p>Terdapat 3 point penting diantaranya adalah :</p>
+
+            <p>1. Pakan hijauan berkualitas.</p>
+            <p>2. Suplementasi protein.</p>
+            <p>3. Pemberian mineral & vitamin.</p><br>
+
+            <h3>1. Kombinasi Pakan Hijauan dan Konsentrat</h3>
+
+            <p>Pakan hijauan seperti rumput pakchong merupakan sumber serat yang sangat baik. Namun, untuk
+                mempercepat pertumbuhan dan menambah bobot domba, pakan konsentrat seperti dedak padiharus diberikan
+                sebagai tambahan energi dan protein.<br><br>
+
+                Tips:<br>
+                Berikan rasio 60% hijauan dan 40% konsentrat untuk pertumbuhan optimal.</p><br>
+
+            <h3>2. Tambahan Suplemen dan Mineral</h3>
+
+            <p>Domba membutuhkan mineral seperti kalsium, fosfor, dan garam untuk memperkuat tulang dan meningkatkan
+                daya tahan tubuh.
+                Suplemen tambahan seperti vitamin A, D, dan E juga penting terutama untuk masa pertumbuhan dan
+                reproduksi.</p><br>
+
+            <h3>3. Jadwal Pemberian Pakan yang Teratur</h3>
+
+            <p>Konsistensi waktu pemberian pakan akan membantu sistem pencernaan domba bekerja maksimal. Berikan pakan
+                minimal dua kali
+                sehari: pagi dan sore, dan sediakan air minum bersih secara terus-menerus.</p><br>
+
+            <h3>4. Fermentasi Pakan</h3>
+            <img src="asset/tong_fermentasi.png">
+            <p>Fermentasi pakan dapat meningkatkan nilai gizi dan mempercepat pertumbuhan bobot domba. Proses
+                fermentasi juga membantu menekan biaya pakan karena dapat menggunakan limbah pertanian.</p> <br>
+
+            <h3>5. Kebersihan dan Penyimpanan Pakan serta pemberian obat</h3>
+
+            <p>Pastikan pakan masih fresh, dan tak lupa meberikan obat apabila terkena penyakit, dan Gunakan tempat
+                penyimpanan yang kering dan bersih untuk mencegah kontaminasi
+                bakteri yang bisa menyebabkan penyakit.</p>
+        </div>
+
+        <div class="sidekanan">
+            <h3>Artikel Terkini</h3>
+            <hr style="color:#eeeeee;"><br>
+
+            <div class="artikel-terkait">
+                <img src="asset/slider1.png" alt="Thumbnail Artikel">
+                <div class="isi-artikel">
+                    <h5>Fitur Buy More Save More: Cara Ampuh Jualan Laris!</h5>
+                    <div class="pembungkus-kategori-isi" style="display:flex;">
+                        <span class="kategori-isi">Materi Penjualan</span>
+                        <p style="font-size:12px; padding-top:8px; padding-left:10px; color:#777986;">2 Juni 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artikel-terkait">
+                <img src="asset/slider1.png" alt="Thumbnail Artikel">
+                <div class="isi-artikel">
+                    <h5>Fitur Buy More Save More: Cara Ampuh Jualan Laris!</h5>
+                    <div class="pembungkus-kategori-isi" style="display:flex;">
+                        <span class="kategori-isi">Materi Penjualan</span>
+                        <p style="font-size:12px; padding-top:8px; padding-left:10px; color:#777986;">2 Juni 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artikel-terkait">
+                <img src="asset/slider1.png" alt="Thumbnail Artikel">
+                <div class="isi-artikel">
+                    <h5>Fitur Buy More Save More: Cara Ampuh Jualan Laris!</h5>
+                    <div class="pembungkus-kategori-isi" style="display:flex;">
+                        <span class="kategori-isi">Materi Penjualan</span>
+                        <p style="font-size:12px; padding-top:8px; padding-left:10px; color:#777986;">2 Juni 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artikel-terkait">
+                <img src="asset/slider1.png" alt="Thumbnail Artikel">
+                <div class="isi-artikel">
+                    <h5>Fitur Buy More Save More: Cara Ampuh Jualan Laris!</h5>
+                    <div class="pembungkus-kategori-isi" style="display:flex;">
+                        <span class="kategori-isi">Materi Penjualan</span>
+                        <p style="font-size:12px; padding-top:8px; padding-left:10px; color:#777986;">2 Juni 2025</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<!-- footer -->
+<footer>
+    <!-- footer atas -->
+    <div class="footer-atas">
+        <div class="footer-logo">
+            <div class="pembungkus-footer-logo">
+                <img src="asset/cursor_sheepvee.png">
+                <h3>SheepVee</h3>
+            </div>
+            <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                memberdayakan
+                peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                super di Indonesia
+                yang terintegrasi dan berkelanjutan.</p>
+        </div>
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <a href="about.html">Kisah Kami</a>
+            <a href="about.html">Peternakan Kami</a>
+            <a href="about.html">Testimonial</a>
+        </div>
+        <div class="footer-service">
+            <h3>Service</h3>
+            <a href="product.html">Domba-Domba</a>
+            <a href="care.html">Sheepvee Care</a>
+            <a href="product.html">Product</a>
+        </div>
+        <div class="footer-contact-us">
+            <h3>Contact US</h3>
+            <a href="contact.html">Contact US</a>
+            <a href="contact.html">Location</a>
+            <a href="contact.html">Support</a>
+        </div>
+    </div>
+    <!-- akhir footer atas -->
+
+    <hr>
+
+    <!-- footer bawah -->
+    <div class="footer-bawah">
+        <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                href="https://github.com/Rif340">Rif340.</a></p>
+        <div class="icon">
+            <a
+                href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i
+                    class="bi bi-whatsapp"></i></a>
+            <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-telegram"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-envelope-at"></i></a>
+        </div>
+
+    </div>
+
+</footer>
+<!-- akhir footer -->
+</body>
+
+</html>

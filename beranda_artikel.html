@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tentang Sheepvee</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+    <!-- boostrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- almalik font -->
+    <link href="https://fonts.cdnfonts.com/css/almalik" rel="stylesheet" />
+
+    <!-- css -->
+    <link href="beranda_artikel.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <navbar class="navbar2" id="navbar">
+        <!-- logo -->
+        <div class="nav-logo2">
+            <img src="asset/logo_sheepvee.png" />
+            <h1>SheepVee</h1>
+        </div>
+        <!-- akhir logo -->
+
+        <!-- nav menu -->
+        <div class="nav-menu2">
+            <a href="index.html">home <i class="bi bi-chevron-up arrow"></i></a>
+            <div class="dropdown2">
+                <a href="#">About<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="about.html#sejarah">Sejarah</a>
+                    <a href="about.html">Peternakan Kami</a>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <a href="#">Service<i class="bi bi-chevron-up arrow"></i></a>
+                <div class="hover-bridge2"></div>
+                <div class="hover-bridge2"></div>
+                <div class="dropdown-content2">
+                    <a href="product.html">Domba-Domba</a>
+                    <a href="product.html">Sheepvee Care</a>
+                    <a href="product.html">product</a>
+                </div>
+            </div>
+        </div>
+        <!-- akhir nav menu -->
+
+        <!-- contact us -->
+        <div class="contact-us2">
+            <form class="input-wrapper" onsubmit="handleSubmit(event)">
+                <input type="search" id="searchInput" name="search" placeholder="Cari Domba..">
+                <ul id="dropdownHasil" class="dropdown-hasil"></ul>
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- akhir contact us -->
+
+        <!-- akhir contac us -->
+
+        <!-- cart -->
+        <div class="cart">
+            <a href="cart.html"><i class="bi bi-cart2 cart-keranjang"></i></a>
+        </div>
+        <!-- akhir cart -->
+
+        <!-- user -->
+        <div class="user2">
+            <div class="isi_user2">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+            </div>
+        </div>
+        <!-- akhir user -->
+
+        <div class="background_navbar2"></div>
+
+
+    </navbar>
+    <!-- akhir navbar -->
+
+    <div class="pembungkusutama">
+        <div class="nafigasi">
+            <p class="nafigasihome">Home</p>
+            <span><i class="bi bi-chevron-right"></i></span>
+        </div>
+
+        <div class="search">
+            <input type="input" placeholder="Cari Artikel ">
+            <button><i class="bi bi-search"></i> Cari</button>
+        </div>
+
+        <div class="artikelpopuler">
+            <h1>Artikel untuk kembangkan bisnis</h1>
+            <div class="pembungkus-card-artikel-bisnis">
+
+                <div class="card-artikel-bisnis">
+                    <div class="gambar-card-artikel-bisnis">
+                        <img src="asset/slider1.png">
+                    </div>
+
+                    <div class="teks-card-artikel-bisnis">
+                        <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                        <div class="pembungkus-kategori-teks">
+                            <p>Materi Penjualan</p>
+                            <p>|</p>
+                            <p>10 Juni 2025</p>
+                            <p>|</p>
+                            <p>Baca 1 Menit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-artikel-bisnis">
+                    <div class="gambar-card-artikel-bisnis">
+                        <img src="asset/slider1.png">
+                    </div>
+
+                    <div class="teks-card-artikel-bisnis">
+                        <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                        <div class="pembungkus-kategori-teks">
+                            <p>Materi Penjualan</p>
+                            <p>|</p>
+                            <p>10 Juni 2025</p>
+                            <p>|</p>
+                            <p>Baca 1 Menit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-artikel-bisnis">
+                    <div class="gambar-card-artikel-bisnis">
+                        <img src="asset/slider1.png">
+                    </div>
+
+                    <div class="teks-card-artikel-bisnis">
+                        <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                        <div class="pembungkus-kategori-teks">
+                            <p>Materi Penjualan</p>
+                            <p>|</p>
+                            <p>10 Juni 2025</p>
+                            <p>|</p>
+                            <p>Baca 1 Menit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-artikel-bisnis">
+                    <div class="gambar-card-artikel-bisnis">
+                        <img src="asset/slider1.png">
+                    </div>
+
+                    <div class="teks-card-artikel-bisnis">
+                        <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                        <div class="pembungkus-kategori-teks">
+                            <p>Materi Penjualan</p>
+                            <p>|</p>
+                            <p>10 Juni 2025</p>
+                            <p>|</p>
+                            <p>Baca 1 Menit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <h2>Yuk, tonton video tips & trik jadi Seller terbaik!</h2>
+            <div class="video-container">
+                <div class="main-video">
+                    <div class="video-player">
+                        <iframe class="video-iframe" src="https://www.youtube.com/embed/1NicaVOCXHA?si=4vo_4hzqxkP0kPV0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Fitur Buy More Save More: Cara Ampuh Jualan Laris!</h3>
+                        <div class="video-meta">
+                            <span>1:26</span>
+                            <span>•</span>
+                            <span>Promosi Toko</span>
+                            <span>•</span>
+                            <span>1 February 2024</span>
+                        </div>
+                        <p class="video-description">
+                            Gak main-main, dari sharing Kak Ruth, fitur Buy More Save More ampuh bikin pembeli order
+                            banyak! Simak cerita lengkapnya!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="playlist">
+                    <div class="playlist-header">
+                        <span class="playlist-title">Video Pilihan</span>
+                        <span class="playlist-count">(1/10)</span>
+                    </div>
+                    <div class="playlist-items">
+                        <div class="playlist-item active" onclick="changeVideo(0)">
+                            <div class="playlist-item-number">1</div>
+                            <div class="playlist-item-thumbnail">
+                                <img src="https://img.youtube.com/vi/NBZ9Ro6UKV8/mqdefault.jpg" alt="Video thumbnail">
+                                <div class="playlist-item-duration">1:26</div>
+                            </div>
+                            <div class="playlist-item-info">
+                                <div class="playlist-item-title">Fitur Buy More Save More: Cara Ampuh Jualan Laris!
+                                </div>
+                                <div class="playlist-item-meta">
+                                    <span>Promosi Toko</span>
+                                    <span>24 October 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="playlist-item" onclick="changeVideo(1)">
+                            <div class="playlist-item-number">2</div>
+                            <div class="playlist-item-thumbnail">
+                                <img src="https://img.youtube.com/vi/1NicaVOCXHA/mqdefault.jpg" alt="Video thumbnail">
+                                <div class="playlist-item-duration">2:15</div>
+                            </div>
+                            <div class="playlist-item-info">
+                                <div class="playlist-item-title">Bukan Sulap, Bukan Sihir! Ini Cara Tingkatkan Penjualan
+                                </div>
+                                <div class="playlist-item-meta">
+                                    <span>Tips Bisnis</span>
+                                    <span>15 March 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="playlist-item" onclick="changeVideo(2)">
+                            <div class="playlist-item-number">3</div>
+                            <div class="playlist-item-thumbnail">
+                                <img src="https://img.youtube.com/vi/3sLSi9L5nWE/mqdefault.jpg" alt="Video thumbnail">
+                                <div class="playlist-item-duration">3:42</div>
+                            </div>
+                            <div class="playlist-item-info">
+                                <div class="playlist-item-title">Strategi Jitu Menang Persaingan Toko Online</div>
+                                <div class="playlist-item-meta">
+                                    <span>Tips Bisnis</span>
+                                    <span>8 April 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="playlist-item" onclick="changeVideo(3)">
+                            <div class="playlist-item-number">4</div>
+                            <div class="playlist-item-thumbnail">
+                                <img src="https://img.youtube.com/vi/cUWBYzA6M-8/mqdefault.jpg" alt="Video thumbnail">
+                                <div class="playlist-item-duration">4:18</div>
+                            </div>
+                            <div class="playlist-item-info">
+                                <div class="playlist-item-title">Rahasia Foto Produk yang Bikin Pembeli Langsung
+                                    Checkout</div>
+                                <div class="playlist-item-meta">
+                                    <span>Tips Bisnis</span>
+                                    <span>22 May 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="playlist-item" onclick="changeVideo(4)">
+                            <div class="playlist-item-number">5</div>
+                            <div class="playlist-item-thumbnail">
+                                <img src="https://img.youtube.com/vi/Dl_bIYBc9gM/mqdefault.jpg" alt="Video thumbnail">
+                                <div class="playlist-item-duration">5:33</div>
+                            </div>
+                            <div class="playlist-item-info">
+                                <div class="playlist-item-title">Customer Service Excellence: Kunci Kepuasan Pelanggan
+                                </div>
+                                <div class="playlist-item-meta">
+                                    <span>Tips Bisnis</span>
+                                    <span>14 June 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="playlist-item" onclick="changeVideo(5)">
+                            <div class="playlist-item-number">6</div>
+                            <div class="playlist-item-thumbnail">
+                                <img src="https://img.youtube.com/vi/SMetRBdIh-8/mqdefault.jpg" alt="Video thumbnail">
+                                <div class="playlist-item-duration">3:27</div>
+                            </div>
+                            <div class="playlist-item-info">
+                                <div class="playlist-item-title">Analisis Data Penjualan untuk Pertumbuhan Bisnis</div>
+                                <div class="playlist-item-meta">
+                                    <span>Analitik</span>
+                                    <span>3 July 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="playlist-item" onclick="changeVideo(6)">
+                            <div class="playlist-item-number">7</div>
+                            <div class="playlist-item-thumbnail">
+                                <img src="https://img.youtube.com/vi/_DVVNOGYtmU/mqdefault.jpg" alt="Video thumbnail">
+                                <div class="playlist-item-duration">6:12</div>
+                            </div>
+                            <div class="playlist-item-info">
+                                <div class="playlist-item-title">Membangun Brand yang Kuat di Era Digital</div>
+                                <div class="playlist-item-meta">
+                                    <span>Branding</span>
+                                    <span>18 August 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="judul-artikelbaru">
+            <h2>Artikel Terbaru</h2>
+        </div>
+
+        <div class="parent">
+            <div class="div1 card-artikel-bisnis">
+                <div class="gambar-card-artikel-bisnis">
+                    <img src="asset/slider1.png">
+                </div>
+            
+                <div class="teks-card-artikel-bisnis">
+                    <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                    <div class="pembungkus-kategori-teks">
+                        <p>Materi Penjualan</p>
+                        <p>|</p>
+                        <p>10 Juni 2025</p>
+                        <p>|</p>
+                        <p>Baca 1 Menit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div2 card-artikel-bisnis">
+                <div class="gambar-card-artikel-bisnis">
+                    <img src="asset/slider1.png">
+                </div>
+            
+                <div class="teks-card-artikel-bisnis">
+                    <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                    <div class="pembungkus-kategori-teks">
+                        <p>Materi Penjualan</p>
+                        <p>|</p>
+                        <p>10 Juni 2025</p>
+                        <p>|</p>
+                        <p>Baca 1 Menit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div3 card-artikel-bisnis">
+                <div class="gambar-card-artikel-bisnis">
+                    <img src="asset/slider1.png">
+                </div>
+            
+                <div class="teks-card-artikel-bisnis">
+                    <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                    <div class="pembungkus-kategori-teks">
+                        <p>Materi Penjualan</p>
+                        <p>|</p>
+                        <p>10 Juni 2025</p>
+                        <p>|</p>
+                        <p>Baca 1 Menit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div4 card-artikel-bisnis">
+                <div class="gambar-card-artikel-bisnis">
+                    <img src="asset/slider1.png">
+                </div>
+            
+                <div class="teks-card-artikel-bisnis">
+                    <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                    <div class="pembungkus-kategori-teks">
+                        <p>Materi Penjualan</p>
+                        <p>|</p>
+                        <p>10 Juni 2025</p>
+                        <p>|</p>
+                        <p>Baca 1 Menit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div5 card-artikel-bisnis">
+                <div class="gambar-card-artikel-bisnis">
+                    <img src="asset/slider1.png">
+                </div>
+            
+                <div class="teks-card-artikel-bisnis">
+                    <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                    <div class="pembungkus-kategori-teks">
+                        <p>Materi Penjualan</p>
+                        <p>|</p>
+                        <p>10 Juni 2025</p>
+                        <p>|</p>
+                        <p>Baca 1 Menit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div6 card-artikel-bisnis">
+                <div class="gambar-card-artikel-bisnis">
+                    <img src="asset/slider1.png">
+                </div>
+            
+                <div class="teks-card-artikel-bisnis">
+                    <a href="artikel.html">Rahasia Pakan Domba Terbaik untuk Pertumbuhan Optimal</a>
+                    <div class="pembungkus-kategori-teks">
+                        <p>Materi Penjualan</p>
+                        <p>|</p>
+                        <p>10 Juni 2025</p>
+                        <p>|</p>
+                        <p>Baca 1 Menit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <!-- footer atas -->
+        <div class="footer-atas">
+            <div class="footer-logo">
+                <div class="pembungkus-footer-logo">
+                    <img src="asset/cursor_sheepvee.png">
+                    <h3>SheepVee</h3>
+                </div>
+                <p>SheepVee, platform teknologi Indonesia, memajukan peternakan domba secara digital. Misi kami adalah
+                    memberdayakan
+                    peternak dengan akses pasar, teknologi, dan informasi. Visi kami adalah membangun ekosistem domba
+                    super di Indonesia
+                    yang terintegrasi dan berkelanjutan.</p>
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <a href="about.html">Kisah Kami</a>
+                <a href="about.html">Peternakan Kami</a>
+                <a href="about.html">Testimonial</a>
+            </div>
+            <div class="footer-service">
+                <h3>Service</h3>
+                <a href="product.html">Domba-Domba</a>
+                <a href="care.html">Sheepvee Care</a>
+                <a href="product.html">Product</a>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Contact US</h3>
+                <a href="contact.html">Contact US</a>
+                <a href="contact.html">Location</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+        <!-- akhir footer atas -->
+    
+        <hr>
+    
+        <!-- footer bawah -->
+        <div class="footer-bawah">
+            <p>Copyright &copy; 2025 Licensed, Registered and authorized by<a class="copyright-text"
+                    href="https://github.com/Rif340">Rif340.</a></p>
+            <div class="icon">
+                <a
+                    href="https://api.whatsapp.com/send/?phone=6285888060024&text=%F0%9F%91%8BHalo%20Sheepvee%2C%20saya%20tertarik%20untuk%20memesan%20layanan%20Anda.%20Mohon%20info%20lebih%20lanjut.&type=phone_number&app_absent=0"><i
+                        class="bi bi-whatsapp"></i></a>
+                <a href="https://github.com/Rif340"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-envelope-at"></i></a>
+            </div>
+    
+        </div>
+    
+    </footer>
+    <!-- akhir footer -->
+     
+    <script>
+        // Video data array
+        const videoData = [
+            {
+                id: "NBZ9Ro6UKV8",
+                title: "Fitur Buy More Save More: Cara Ampuh Jualan Laris!",
+                duration: "1:26",
+                category: "Promosi Toko",
+                date: "1 February 2024",
+                description: "Gak main-main, dari sharingnya, fitur Buy More Save More ampuh bikin pembeli order banyak! Simak cerita lengkapnya!"
+            },
+            {
+                id: "1NicaVOCXHA",
+                title: "Dekorasi Toko Tepat, Penjualan Melesat. Kata Siapa?",
+                duration: "1:30",
+                category: "Promosi Toko",
+                date: "31 January 2024",
+                description: "Pelajari bagaimana dekorasi toko yang tepat dapat meningkatkan penjualan Anda secara signifikan!"
+            },
+            {
+                id: "3sLSi9L5nWE",
+                title: "Baru! Hadiah Pembelian 🎁 Siapa Bonus Spesial, Pembeli Semangat Checkout",
+                duration: "9:09",
+                category: "Promosi Toko",
+                date: "26 February 2024",
+                description: "Fitur hadiah pembelian yang membuat pembeli semakin semangat untuk checkout lebih banyak produk!"
+            },
+            {
+                id: "cUWBYzA6M-8",
+                title: "Fitur Baru yang Bikin Pembeli Kalap? Cobain Buy More Save",
+                duration: "6:56",
+                category: "Promosi Toko",
+                date: "24 October 2024",
+                description: "Temukan fitur terbaru yang dapat membuat pembeli lebih tertarik untuk berbelanja di toko Anda."
+            },
+            {
+                id: "Dl_bIYBc9gM",
+                title: "Bukan Sulap, Bukan Sihir! Ini Cara Tingkatkan Penjualan",
+                duration: "2:15",
+                category: "Tips Bisnis",
+                date: "15 March 2024",
+                description: "Tips dan trik praktis untuk meningkatkan penjualan toko online Anda dengan cara yang efektif."
+            },
+            {
+                id: "SMetRBdIh-8",
+                title: "Strategi Jitu Menang Persaingan Toko Online",
+                duration: "3:42",
+                category: "Tips Bisnis",
+                date: "8 April 2024",
+                description: "Strategi komprehensif untuk mengalahkan kompetitor dan menjadi nomor satu di pasar."
+            },
+            {
+                id: "_DVVNOGYtmU",
+                title: "Rahasia Foto Produk yang Bikin Pembeli Langsung Checkout",
+                duration: "4:18",
+                category: "Tips Bisnis",
+                date: "22 May 2024",
+                description: "Pelajari teknik fotografi produk yang dapat meningkatkan conversion rate toko online Anda."
+            },
+
+        ];
+
+        // Function to change video
+        function changeVideo(index) {
+            const video = videoData[index];
+
+            // Update iframe src
+            const iframe = document.querySelector('.video-iframe');
+            iframe.src = `https://www.youtube.com/embed/${video.id}`;
+
+            // Update video info
+            document.querySelector('.video-title').textContent = video.title;
+            document.querySelector('.video-meta').innerHTML = `
+                    <span>${video.duration}</span>
+                    <span>•</span>
+                    <span>${video.category}</span>
+                    <span>•</span>
+                    <span>${video.date}</span>
+                `;
+            document.querySelector('.video-description').textContent = video.description;
+
+            // Update playlist count
+            document.querySelector('.playlist-count').textContent = `(${index + 1}/10)`;
+
+            // Update active state
+            document.querySelectorAll('.playlist-item').forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Search functionality (if needed)
+        function handleSubmit(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('searchInput').value;
+            console.log('Searching for:', searchTerm);
+            // Add your search logic here
+        }
+    </script>
+</body>
+
+</html>
